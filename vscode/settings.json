@@ -102,6 +102,5 @@
   "dart.debugExternalPackageLibraries": false,
   "dart.debugSdkLibraries": false,
   "editor.fontLigatures": true,
-  "window.autoDetectColorScheme": true,
-  "workbench.colorTheme": "Default Light+"
+  "window.autoDetectColorScheme": true
 }
