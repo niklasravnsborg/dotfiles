@@ -89,8 +89,6 @@ brew "leptonica"
 brew "tesseract"
 # Play, record, convert, and stream audio and video
 brew "ffmpeg"
-# Platform built on V8 to build network applications
-brew "node", link: false
 # Firebase command-line tools
 brew "firebase-cli"
 # GNU awk utility
@@ -152,7 +150,7 @@ brew "nghttp2"
 # Port scanning utility for large networks
 brew "nmap"
 # Platform built on V8 to build network applications
-brew "node@16", link: true
+brew "node@18", link: true
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@3"
 # Swiss-army knife of markup format conversion
@@ -306,6 +304,7 @@ cask "warp"
 cask "zoom"
 mas "ColorSlurp", id: 1287239339
 mas "Craft", id: 1487937127
+mas "GarageBand", id: 682658836
 mas "Keynote", id: 409183694
 mas "Listy", id: 1496035097
 mas "Metronome", id: 1629209970
