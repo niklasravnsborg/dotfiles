@@ -73,6 +73,8 @@ brew "composer"
 brew "coreutils"
 # Secure runtime for JavaScript and TypeScript
 brew "deno"
+# Tool that bootstraps your dotfiles
+brew "dotbot"
 # Perl lib for reading and writing EXIF metadata
 brew "exiftool"
 # GNU Transport Layer Security (TLS) Library
