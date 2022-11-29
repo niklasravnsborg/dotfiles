@@ -15,4 +15,7 @@ echo "Install custom keyboard"
 echo "Fix GPG pinentry"
 ./macos/pinentry.sh
 
+echo "Install tmux plugin manager"
+./tmux/setup.sh
+
 dotbot -c install.conf.yaml
