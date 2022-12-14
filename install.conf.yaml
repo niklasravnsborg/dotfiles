@@ -1,14 +1,12 @@
 - clean: ['~']
 
 - link:
-    "~/Library/Application Support/Code/User/keybindings.json": vscode/keybindings.json
-    "~/Library/Application Support/Code/User/settings.json": vscode/settings.json
-    "~/Library/LaunchAgents/Timemator.restart.plist": macos/Timemator.restart.plist
-    ~/.finicky.js: finicky/.finicky.js
+#    "~/Library/Application Support/Code/User/keybindings.json": vscode/keybindings.json
+#    "~/Library/Application Support/Code/User/settings.json": vscode/settings.json
+#    "~/Library/LaunchAgents/Timemator.restart.plist": macos/Timemator.restart.plist
     ~/.gitconfig: git/.gitconfig
     ~/.gitignore: git/.gitignore
     ~/.ssh/config: ssh/config
-    ~/.svgoconfig.js: svgo/.svgoconfig.js
-    ~/.tmux.conf: tmux/.tmux.conf
+ #   ~/.tmux.conf: tmux/.tmux.conf
     ~/.vimrc: vim/.vimrc
     ~/.zshrc: zsh/.zshrc

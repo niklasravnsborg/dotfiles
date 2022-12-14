@@ -1,3 +1,0 @@
-||plausible.io^$script,domain=estatesync.com
-||plausible.io^$script,domain=richartkeil.com
-||plausible.io^$script,domain=niklasravnsborg.com

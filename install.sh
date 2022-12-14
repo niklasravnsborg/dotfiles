@@ -9,13 +9,13 @@ brew bundle --file=macos/Brewfile
 echo "Configure macOS"
 ./macos/defaults.sh
 
-echo "Install custom keyboard"
-./macos/keyboard.sh
+# echo "Install custom keyboard"
+# ./macos/keyboard.sh
 
-echo "Fix GPG pinentry"
-./macos/pinentry.sh
+# echo "Fix GPG pinentry"
+# ./macos/pinentry.sh
 
-echo "Install tmux plugin manager"
-./tmux/setup.sh
+# echo "Install tmux plugin manager"
+# ./tmux/setup.sh
 
 dotbot -c install.conf.yaml

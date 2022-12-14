@@ -1,3 +1,6 @@
+# GAM
+function gam() { "/Users/knaggit/bin/gam/gam" "$@" ; }
+
 # Remove the % from Hyper Terminal
 unsetopt PROMPT_SP
 
@@ -17,12 +20,12 @@ path=("$(npm config get prefix)/bin" $path) # Add npm bin
 export PATH
 
 # The next lines sources autocomplete scripts for Google Cloud SDK.
-autoload -U +X compinit && compinit
-source "$HOMEBREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
-source "$HOMEBREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+# autoload -U +X compinit && compinit
+# source "$HOMEBREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+# source "$HOMEBREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 
 # Set Gem home
-export GEM_HOME="$HOME/.gem"
+# export GEM_HOME="$HOME/.gem"
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
@@ -38,7 +41,7 @@ antigen theme petermbenjamin/purity
 antigen apply
 
 # Disable svgo path conversion by default
-alias svgo="svgo --config=~/.svgoconfig.js"
+# alias svgo="svgo --config=~/.svgoconfig.js"
 
 # kubectl alias
-alias kc="kubectl"
+# alias kc="kubectl"
