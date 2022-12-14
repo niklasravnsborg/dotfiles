@@ -37,8 +37,6 @@ cask "imageoptim"
 cask "miro"
 # App to write, plan, collaborate, and get organized
 cask "notion"
-# Imaging utility to install operating systems to a microSD card
-cask "raspberry-pi-imager"
 # Instant messaging application focusing on security
 cask "signal"
 # Open-source code editor
