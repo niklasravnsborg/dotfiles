@@ -1,6 +1,9 @@
 # GAM
 function gam() { "/Users/knaggit/bin/gam/gam" "$@" ; }
 
+# 1Password
+eval "$(op completion zsh)"; compdef _op op
+
 # Remove the % from Hyper Terminal
 unsetopt PROMPT_SP
 
