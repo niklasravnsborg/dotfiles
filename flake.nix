@@ -33,6 +33,19 @@
   outputs =
     inputs:
     let
+      systems = {
+        darwin = "aarch64-darwin";
+        nixos = "x86_64-linux";
+      };
+      myNixpkgs =
+        system:
+        import inputs.nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+          overlays = [
+            (import ./nix/overlays/claude.nix)
+          ];
+        };
       sharedModules = [
         inputs.sops-nix.homeManagerModules.sops
         ./tmux/tmux-module.nix
@@ -47,9 +60,10 @@
         };
       };
       darwinSystem = inputs.nix-darwin.lib.darwinSystem {
-        system = "aarch64-darwin";
+        system = systems.darwin;
         specialArgs = {
           inherit secretsPath;
+          pkgs = myNixpkgs systems.darwin;
         };
         modules = [
           ./nix/darwin.nix
@@ -67,9 +81,10 @@
         ];
       };
       nixosSystem = inputs.nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        system = systems.nixos;
         specialArgs = {
           inherit secretsPath;
+          pkgs = myNixpkgs systems.nixos;
         };
         modules = [
           ./nixos/configuration.nix

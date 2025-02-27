@@ -140,9 +140,6 @@
     enableSSHSupport = true;
   };
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
   # Enable the Nix flake support
   nix.settings.experimental-features = [
     "nix-command"

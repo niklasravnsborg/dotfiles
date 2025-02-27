@@ -36,6 +36,7 @@ in
     age # Secure file encryption
     any-nix-shell # Run nix-shell in any directory
     bun # Incredibly fast JavaScript runtime
+    claude-code # Claude CLI tool from Anthropic
     cloc # Count lines of code
     cloudflared # Cloudflare tunnel
     delta # Syntax-highlighter for git and diff output
