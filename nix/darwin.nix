@@ -122,6 +122,13 @@ in
 
   system.primaryUser = "nik";
 
+  # Enable Touch ID for sudo
+  security.pam.services.sudo_local = {
+    enable = true;
+    touchIdAuth = true;
+    reattach = true; # Fixes Touch ID for sudo inside tmux and screen
+  };
+
   system.defaults.finder = {
     FXPreferredViewStyle = "Nlsv"; # Always open everything in list view
     ShowStatusBar = true; # Show status bar
