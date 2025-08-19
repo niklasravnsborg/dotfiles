@@ -229,6 +229,7 @@ in
       "font-sauce-code-pro-nerd-font"
 
       # Applications
+      "adobe-digital-editions" # E-book verifier and reader
       "arc" # Chromium based browser
       "beeper" # Universal chat app
       "bitwarden" # Desktop password and login vault
@@ -240,11 +241,13 @@ in
       "eloston-chromium" # Chromium based browser
       "finicky" # Utility for customizing which browser to start
       "firefox" # Web browser
+      "iina" # Multimedia player
       "karabiner-elements" # Keyboard customizer
       "legcord" # Discord client
       "macfuse" # File system integration
       "mos" # Smooths scrolling and set mouse scroll directions independently
       "numi" # Calculator and converter application
+      "opensuperwhisper" # Whisper client for macOS
       "phoenix" # Window and app manager scriptable with JavaScript
       "protonvpn" # VPN client focusing on security
       "qlmarkdown" # Quick Look generator for Markdown files
@@ -257,7 +260,7 @@ in
       "the-unarchiver" # Unpacks archive files
       "timemator" # Automatic time-tracking application
       "topnotch" # Utility to hide the notch
-      "vlc" # Multimedia player
+      "ungoogled-chromium" # Chromium based browser with privacy in mind
       "yubico-authenticator" # Application for configuring YubiKeys
       "zoom" # Video communication and virtual meeting platform
 
@@ -301,7 +304,7 @@ in
       "dbngin" # Database version management tool
       "fork" # GIT client
       "ghostty" # Terminal emulator that uses platform-native UI and GPU acceleration
-      "httpie" # Testing client for REST, GraphQL, and HTTP APIs
+      "httpie-desktop" # Testing client for REST, GraphQL, and HTTP APIs
       "kitty" # GPU-based terminal emulator
       "orbstack" # Replacement for Docker Desktop
       "proxyman" # HTTP debugging proxy
@@ -310,7 +313,7 @@ in
       "visual-studio-code" # Open-source code editor
       "warp" # Rust-based terminal
       "windsurf" # VSCode-fork with AI integration
-      "wireshark" # Network protocol analyzer
+      "wireshark-app" # Network protocol analyzer
     ];
   };
 
