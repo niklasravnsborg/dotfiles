@@ -120,6 +120,8 @@ in
     ];
   };
 
+  system.primaryUser = "nik";
+
   system.defaults.finder = {
     FXPreferredViewStyle = "Nlsv"; # Always open everything in list view
     ShowStatusBar = true; # Show status bar
@@ -149,39 +151,45 @@ in
     autohide = true; # automatically hide and show the Dock
   };
 
-  system.activationScripts.postUserActivation = {
+  system.activationScripts.activateNik = {
     text = ''
       # Set default shell to fish
       sudo chsh -s /run/current-system/sw/bin/fish nik
 
-      # Disable "Select the previous input source", because I use Ctrl + Space in Tmux
-      defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 60 '<dict><key>enabled</key><false/></dict>'
+      # Create a script with proper Nix variable expansion for all user commands
+      script="
+        # Disable 'Select the previous input source', because I use Ctrl + Space in Tmux
+        defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 60 '<dict><key>enabled</key><false/></dict>'
 
-      # Disable "Show Spotlight search", because I use Cmd + Space for Raycast
-      defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 64 '<dict><key>enabled</key><false/></dict>'
+        # Disable 'Show Spotlight search', because I use Cmd + Space for Raycast
+        defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 64 '<dict><key>enabled</key><false/></dict>'
 
-      # Activate settings so we don't have to restart
-      /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
+        # Activate settings so we don't have to restart
+        /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
 
-      # Install keyboard shortcuts
-      ${pkgs.bun}/bin/bun run --cwd=${configDir}/macos/karabiner/ build
-      ${pkgs.bun}/bin/bun run --cwd=${configDir}/macos/phoenix/ build
+        # Install keyboard shortcuts
+        ${pkgs.bun}/bin/bun run --cwd=${configDir}/macos/karabiner/ build
+        ${pkgs.bun}/bin/bun run --cwd=${configDir}/macos/phoenix/ build
 
-      # Configure Final Cut to enable timeline rendering during playback
-      defaults write com.apple.FinalCut FFSuspendBGOpsDuringPlay 0
+        # Configure Final Cut to enable timeline rendering during playback
+        defaults write com.apple.FinalCut FFSuspendBGOpsDuringPlay 0
 
-      # Configure Apple Mail
-      defaults write com.apple.mail ShowCcHeader 0
-      defaults write com.apple.mail EnableContactPhotos  1
-      defaults write com.apple.mail NSFont SFPro-Regular
-      defaults write com.apple.mail NSFontSize 12
+        # Configure Apple Mail
+        defaults write com.apple.mail ShowCcHeader 0
+        defaults write com.apple.mail EnableContactPhotos 1
+        defaults write com.apple.mail NSFont SFPro-Regular
+        defaults write com.apple.mail NSFontSize 12
 
-      # Disable autoupgrade - Use `brew cu -aqy` to upgrade apps
-      defaults write com.DanPristupov.Fork SUEnableAutomaticChecks -bool false
-      defaults write com.seriflabs.affinitydesigner2 AutoUpdateInterval -bool false
-      defaults write com.seriflabs.affinityphoto2 AutoUpdateInterval -bool false
-      defaults write com.proxyman.NSProxy isUsingSystemStatusBar -bool false
-      defaults write com.proxyman.NSProxy shouldShowUpdatePopup -bool false
+        # Disable autoupgrade - Use `brew cu -aqy` to upgrade apps
+        defaults write com.DanPristupov.Fork SUEnableAutomaticChecks -bool false
+        defaults write com.seriflabs.affinitydesigner2 AutoUpdateInterval -bool false
+        defaults write com.seriflabs.affinityphoto2 AutoUpdateInterval -bool false
+        defaults write com.proxyman.NSProxy isUsingSystemStatusBar -bool false
+        defaults write com.proxyman.NSProxy shouldShowUpdatePopup -bool false
+      "
+
+      # Run the script as user nik
+      sudo -u nik bash -c "$script"
     '';
   };
 

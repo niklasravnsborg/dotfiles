@@ -14,7 +14,7 @@ let
     man = "batman";
     nix-switch =
       if pkgs.stdenv.isDarwin then
-        "darwin-rebuild switch --flake ~/dotfiles"
+        "sudo darwin-rebuild switch --flake ~/dotfiles"
       else
         "sudo nixos-rebuild switch --flake ~/dotfiles";
     svgo = "svgo --config=$HOME/.svgo.config.js";
@@ -36,7 +36,6 @@ in
     age # Secure file encryption
     any-nix-shell # Run nix-shell in any directory
     atuin # Universal history
-    bitwarden-cli # CLI for my password manager
     bun # Incredibly fast JavaScript runtime
     claude-code # Claude CLI tool from Anthropic
     cloc # Count lines of code
@@ -219,27 +218,27 @@ in
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
-    initExtraFirst = ''
+    initContent = lib.mkBefore ''
       # Set PATH and environment
       source ~/.env.sh
     '';
 
-    initExtra = ''
-      # Ignore commands in history that begin with a space
-      # https://dev.to/epranka/hide-the-exported-env-variables-from-the-history-49ni
-      export HISTCONTROL=ignorespace
+    # initContent = lib.mkAfter ''
+    #   # Ignore commands in history that begin with a space
+    #   # https://dev.to/epranka/hide-the-exported-env-variables-from-the-history-49ni
+    #   export HISTCONTROL=ignorespace
 
-      # Bind Alt+Left and Alt+Right to move between words
-      bindkey "^[[1;3C" forward-word
-      bindkey "^[[1;3D" backward-word
+    #   # Bind Alt+Left and Alt+Right to move between words
+    #   bindkey "^[[1;3C" forward-word
+    #   bindkey "^[[1;3D" backward-word
 
-      # Setup Atuin
-      eval "$(ATUIN_NOBIND=true atuin init zsh)"
-      bindkey '^a' atuin-search
+    #   # Setup Atuin
+    #   eval "$(ATUIN_NOBIND=true atuin init zsh)"
+    #   bindkey '^a' atuin-search
 
-      # This adds a blank line before each command output for better readability
-      function precmd { echo }
-    '';
+    #   # This adds a blank line before each command output for better readability
+    #   function precmd { echo }
+    # '';
 
     shellAliases = shellAliases;
 
@@ -263,7 +262,7 @@ in
 
   services.gpg-agent = {
     enable = true;
-    pinentryPackage = if pkgs.stdenv.isDarwin then pkgs.pinentry_mac else pkgs.pinentry;
+    pinentry.package = if pkgs.stdenv.isDarwin then pkgs.pinentry_mac else pkgs.pinentry;
   };
 
   programs.direnv = {

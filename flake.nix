@@ -3,18 +3,15 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/release-24.05";
     treefmt-nix.url = "github:numtide/treefmt-nix";
     systems.url = "github:nix-systems/default";
     nix-darwin = {
-      url = "github:niklasravnsborg/nix-darwin";
+      url = "github:nix-darwin/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-homebrew = {
       url = "github:zhaofengli/nix-homebrew";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.nix-darwin.follows = "nix-darwin";
-      inputs.brew-src.url = "github:Homebrew/brew/4.4.25";
+      inputs.brew-src.url = "github:Homebrew/brew/4.6.4";
     };
     nix-darwin-custom-icons = {
       url = "github:ryanccn/nix-darwin-custom-icons";
@@ -47,8 +44,6 @@
           config.allowUnfree = true;
           overlays = [
             (import ./nix/overlays/claude.nix)
-            # bitwarden-cli-2025.3.0 had some build issues
-            (final: prev: { bitwarden-cli = inputs.nixpkgs-stable.legacyPackages.${system}.bitwarden-cli; })
           ];
         };
       secretsPath = builtins.toString inputs.dotfiles-secrets;
