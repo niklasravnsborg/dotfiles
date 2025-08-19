@@ -51,15 +51,15 @@
             (final: prev: { bitwarden-cli = inputs.nixpkgs-stable.legacyPackages.${system}.bitwarden-cli; })
           ];
         };
-      sharedModules = [
-        inputs.sops-nix.homeManagerModules.sops
-        ./tmux/tmux-module.nix
-      ];
       secretsPath = builtins.toString inputs.dotfiles-secrets;
       homeManagerConfig = {
         useGlobalPkgs = true;
         users.nik = import ./nix/home.nix;
-        inherit sharedModules;
+        sharedModules = [
+          inputs.sops-nix.homeManagerModules.sops
+          ./tmux/tmux-module.nix
+
+        ];
         extraSpecialArgs = {
           inherit secretsPath;
         };
@@ -77,7 +77,11 @@
           inputs.home-manager.darwinModules.home-manager
           inputs.nix-homebrew.darwinModules.nix-homebrew
           {
-            home-manager = homeManagerConfig;
+            home-manager = homeManagerConfig // {
+              sharedModules = homeManagerConfig.sharedModules ++ [
+                ./macos/file-associations
+              ];
+            };
             nix-homebrew = {
               enable = true;
               user = "nik";
