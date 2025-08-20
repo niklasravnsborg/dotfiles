@@ -246,7 +246,6 @@ in
       "chatwise" # AI chat app
       "deskpad" # A virtual monitor for screen sharing
       "dropbox" # Client for the Dropbox cloud storage service
-      "eloston-chromium" # Chromium based browser
       "finicky" # Utility for customizing which browser to start
       "firefox" # Web browser
       "iina" # Multimedia player
