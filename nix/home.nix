@@ -21,6 +21,11 @@ let
     wifi = "nextdns deactivate; open http://neverssl.com; read -P 'Continue? '; nextdns activate";
     ffmpeg = "ffmpeg -hide_banner";
     cat = "bat -p";
+
+    # Shortcuts
+    c = "clear";
+    o = "open .";
+    dot = "hx ~/dotfiles";
   };
   homePath = config.home.homeDirectory;
   configDir = "${homePath}/dotfiles";
