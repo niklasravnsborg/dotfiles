@@ -4,11 +4,11 @@
     "": {
       "name": "karabiner-config",
       "dependencies": {
-        "karabiner.ts": "^1.30.3",
+        "karabiner.ts": "^1.35.0",
       },
     },
   },
   "packages": {
-    "karabiner.ts": ["karabiner.ts@1.30.3", "", {}, "sha512-/SsRXDv24zJSMOQkk/fYyA4N9cy/CXNUFe9TZ0xZjS+UwfMC2ZBLw6lIODttiq6BONLHOLu2Ujd5PAB2KEevuA=="],
+    "karabiner.ts": ["karabiner.ts@1.35.1", "", {}, "sha512-ndykub6ifouFN6Mz4C6e6VWtCH70rBFmts7ci1QPWXUBOnbBV+aWUPKUcwttHxaLOdGCDlsBsqTSkMKVSUVmMA=="],
   }
 }

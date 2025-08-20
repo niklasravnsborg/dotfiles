@@ -5,6 +5,6 @@
     "build": "bun run src/index.ts"
   },
   "dependencies": {
-    "karabiner.ts": "^1.30.3"
+    "karabiner.ts": "^1.35.1"
   }
 }

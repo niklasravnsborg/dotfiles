@@ -1,4 +1,10 @@
-import { map, rule, withModifier, writeToProfile } from "karabiner.ts";
+import {
+  map,
+  rule,
+  withModifier,
+  writeToGlobal,
+  writeToProfile,
+} from "karabiner.ts";
 
 // Use `--dry-run` as profile to print the config json to console
 writeToProfile("Default profile", [
@@ -15,5 +21,9 @@ writeToProfile("Default profile", [
       map("n").to("page_down"),
     ]),
   ]),
-
 ]);
+
+writeToGlobal({
+  show_in_menu_bar: false,
+  check_for_updates_on_startup: false,
+});
