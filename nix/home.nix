@@ -124,28 +124,27 @@ in
     };
   };
 
-  home.activation =
-    {
-      atuinLogin = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-        if [ -e ${homePath}/.local/share/atuin/session ]; then
-          echo "Atuin session exists already"
-        else
-          echo "Logging in to Atuin server"
-          echo | ${pkgs.atuin}/bin/atuin login \
-            -u $(cat ${config.sops.secrets."atuin/username".path}) \
-            -p $(cat ${config.sops.secrets."atuin/password".path})
-        fi
-      '';
+  home.activation = {
+    atuinLogin = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+      if [ -e ${homePath}/.local/share/atuin/session ]; then
+        echo "Atuin session exists already"
+      else
+        echo "Logging in to Atuin server"
+        echo | ${pkgs.atuin}/bin/atuin login \
+          -u $(cat ${config.sops.secrets."atuin/username".path}) \
+          -p $(cat ${config.sops.secrets."atuin/password".path})
+      fi
+    '';
 
-    }
-    // lib.optionalAttrs pkgs.stdenv.isDarwin {
-      copyKeyboardLayout = lib.optionalAttrs pkgs.stdenv.isDarwin ''
-        mkdir -p ~/Library/Keyboard\ Layouts/
-        cp -R ${configDir}/macos/niklas.keylayout ~/Library/Keyboard\ Layouts/
-      '';
-      # I would prefer to symlink this file, but macOS seems to ignore symlinks in LaunchAgents
-      copyTimematorRestart = lib.optionalAttrs pkgs.stdenv.isDarwin ''cp -R ${configDir}/macos/timemator.restart.plist ~/Library/LaunchAgents/'';
-    };
+  }
+  // lib.optionalAttrs pkgs.stdenv.isDarwin {
+    copyKeyboardLayout = lib.optionalAttrs pkgs.stdenv.isDarwin ''
+      mkdir -p ~/Library/Keyboard\ Layouts/
+      cp -R ${configDir}/macos/niklas.keylayout ~/Library/Keyboard\ Layouts/
+    '';
+    # I would prefer to symlink this file, but macOS seems to ignore symlinks in LaunchAgents
+    copyTimematorRestart = lib.optionalAttrs pkgs.stdenv.isDarwin ''cp -R ${configDir}/macos/timemator.restart.plist ~/Library/LaunchAgents/'';
+  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -218,27 +217,29 @@ in
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
-    initContent = lib.mkBefore ''
-      # Set PATH and environment
-      source ~/.env.sh
-    '';
+    initContent = lib.mkMerge [
+      (lib.mkBefore ''
+        # Set PATH and environment
+        source ~/.env.sh
+      '')
 
-    # initContent = lib.mkAfter ''
-    #   # Ignore commands in history that begin with a space
-    #   # https://dev.to/epranka/hide-the-exported-env-variables-from-the-history-49ni
-    #   export HISTCONTROL=ignorespace
+      (lib.mkAfter ''
+        # Ignore commands in history that begin with a space
+        # https://dev.to/epranka/hide-the-exported-env-variables-from-the-history-49ni
+        export HISTCONTROL=ignorespace
 
-    #   # Bind Alt+Left and Alt+Right to move between words
-    #   bindkey "^[[1;3C" forward-word
-    #   bindkey "^[[1;3D" backward-word
+        # Bind Alt+Left and Alt+Right to move between words
+        bindkey "^[[1;3C" forward-word
+        bindkey "^[[1;3D" backward-word
 
-    #   # Setup Atuin
-    #   eval "$(ATUIN_NOBIND=true atuin init zsh)"
-    #   bindkey '^a' atuin-search
+        # Setup Atuin
+        eval "$(ATUIN_NOBIND=true atuin init zsh)"
+        bindkey '^a' atuin-search
 
-    #   # This adds a blank line before each command output for better readability
-    #   function precmd { echo }
-    # '';
+        # This adds a blank line before each command output for better readability
+        function precmd { echo }
+      '')
+    ];
 
     shellAliases = shellAliases;
 
