@@ -259,7 +259,6 @@ in
       "karabiner-elements" # Keyboard customizer
       "legcord" # Discord client
       "macfuse" # File system integration
-      "mos" # Smooths scrolling and set mouse scroll directions independently
       "numi" # Calculator and converter application
       "opensuperwhisper" # Whisper client for macOS
       "phoenix" # Window and app manager scriptable with JavaScript
@@ -267,6 +266,7 @@ in
       "qlmarkdown" # Quick Look generator for Markdown files
       "raycast" # Control your tools with a few keystrokes
       "rwts-pdfwriter" # Print driver for printing documents directly to a pdf file
+      "scroll-reverser" # Set mouse scroll directions independently
       "signal" # Instant messaging application focusing on security
       "spotify" # Music streaming service
       "stats" # System monitor for the menu bar
