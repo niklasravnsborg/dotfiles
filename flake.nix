@@ -42,9 +42,6 @@
         import inputs.nixpkgs {
           inherit system;
           config.allowUnfree = true;
-          overlays = [
-            (import ./nix/overlays/claude.nix)
-          ];
         };
       secretsPath = builtins.toString inputs.dotfiles-secrets;
       homeManagerConfig = {

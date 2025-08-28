@@ -42,7 +42,6 @@ in
     any-nix-shell # Run nix-shell in any directory
     atuin # Universal history
     bun # Incredibly fast JavaScript runtime
-    claude-code # Claude CLI tool from Anthropic
     cloc # Count lines of code
     cloudflared # Cloudflare tunnel
     delta # Syntax-highlighter for git and diff output
@@ -71,6 +70,11 @@ in
     tree # Display directories as trees
     watch # Execute a program periodically
     yq # Process YAML, JSON, XML, CSV and properties documents
+
+    # AI Tools
+    claude-code
+    codex
+    goose-cli
 
     # Fun
     asciiquarium # Aquarium animation
