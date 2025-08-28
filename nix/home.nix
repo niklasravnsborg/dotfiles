@@ -352,6 +352,7 @@ in
         commit = {
           autoWrapCommitMessage = false;
         };
+        autoForwardBranches = "none";
       };
       gui = {
         scrollHeight = 1;
