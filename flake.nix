@@ -11,7 +11,7 @@
     };
     nix-homebrew = {
       url = "github:zhaofengli/nix-homebrew";
-      inputs.brew-src.url = "github:Homebrew/brew/4.6.4";
+      inputs.brew-src.url = "github:Homebrew/brew/4.6.7";
     };
     nix-darwin-custom-icons = {
       url = "github:ryanccn/nix-darwin-custom-icons";
