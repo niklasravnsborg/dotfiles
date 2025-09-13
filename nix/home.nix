@@ -74,7 +74,6 @@ in
     # AI Tools
     claude-code
     codex
-    goose-cli
 
     # Fun
     asciiquarium # Aquarium animation
