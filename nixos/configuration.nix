@@ -21,7 +21,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Set hostname
-  networking.hostName = "Niklas-Workstation";
+  networking.hostName = "Quastenflosser";
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -40,12 +40,12 @@
   services.xserver.enable = true;
 
   # Enable GNOME Desktop Environment
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
 
   # Disable Hibernation
   # Copied from https://github.com/NixOS/nixpkgs/issues/100390#issuecomment-867830400
-  services.xserver.displayManager.gdm.autoSuspend = false;
+  services.displayManager.gdm.autoSuspend = false;
   security.polkit.extraConfig = ''
     polkit.addRule(function(action, subject) {
       if (action.id == "org.freedesktop.login1.suspend" ||
@@ -117,6 +117,7 @@
     packages = with pkgs; [
       kitty
       vscode
+      ghostty
     ];
   };
 
