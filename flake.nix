@@ -119,6 +119,17 @@
         formatting = treefmtEval.${pkgs.system}.config.build.check inputs.self;
       });
 
+      # development environment, enabled via `.envrc`
+      devShell = eachSystem (
+        pkgs:
+        pkgs.mkShell {
+          packages = with pkgs; [
+            nixd
+            nixfmt
+          ];
+        }
+      );
+
       darwinConfigurations."Barrakuda" = darwinSystem;
       darwinConfigurations."Mantarochen" = darwinSystem;
       nixosConfigurations."Quastenflosser" = nixosSystem;
