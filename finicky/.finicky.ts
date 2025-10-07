@@ -7,6 +7,7 @@ export default {
   defaultBrowser: "Arc",
   options: {
     checkForUpdates: false,
+    hideIcon: true,
     logRequests: false,
   },
   handlers: [
