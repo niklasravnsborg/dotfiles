@@ -74,6 +74,7 @@ in
     # AI Tools
     claude-code
     codex
+    opencode
 
     # Fun
     asciiquarium # Aquarium animation
@@ -105,9 +106,10 @@ in
     ".config/helix/themes/my_theme.toml" = dotfile "helix/my_theme.toml";
     ".config/kitty/kitty.conf" = dotfile "kitty/kitty.conf";
     ".config/nix/nix.conf" = dotfile "nix/nix.conf";
+    ".config/opencode/opencode.jsonc" = dotfile "opencode/opencode.jsonc";
     ".config/posting/config.yaml" = dotfile "posting/config.yaml";
-    ".local/share/posting/themes/my_theme.yaml" = dotfile "posting/themes/my_theme.yaml";
     ".config/starship.toml" = dotfile "starship/starship.toml";
+    ".local/share/posting/themes/my_theme.yaml" = dotfile "posting/themes/my_theme.yaml";
 
     # Yazi
     ".config/yazi/theme.toml" = dotfile "yazi/theme.toml";
