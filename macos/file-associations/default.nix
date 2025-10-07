@@ -43,17 +43,24 @@
       # Most code related files
       com.exafunction.windsurf public.source-code all
       com.exafunction.windsurf public.plain-text all
+      com.exafunction.windsurf css all
       com.exafunction.windsurf fish all
       com.exafunction.windsurf md all
       com.exafunction.windsurf mdx all
       com.exafunction.windsurf nix all
+      com.exafunction.windsurf ts all
       com.exafunction.windsurf xml all
+      com.exafunction.windsurf xsd all
 
       # C# / .NET
       com.microsoft.VSCode cs all
       com.microsoft.VSCode csproj all
       com.microsoft.VSCode razor all
       com.microsoft.VSCode sln all
+
+      # Firestore Rules (db.rules)
+      # Currently only VSCode has the extension for viewing db.rules files
+      com.microsoft.VSCode rules all
     '';
   };
 }
