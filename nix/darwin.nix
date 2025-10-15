@@ -245,7 +245,6 @@ in
 
       # Applications
       "adobe-digital-editions" # E-book verifier and reader
-      "arc" # Chromium based browser
       "beeper" # Universal chat app
       "bitwarden" # Desktop password and login vault
       "calibre" # E-books management software
@@ -253,8 +252,6 @@ in
       "chatwise" # AI chat app
       "deskpad" # A virtual monitor for screen sharing
       "dropbox" # Client for the Dropbox cloud storage service
-      "finicky" # Utility for customizing which browser to start
-      "firefox" # Web browser
       "iina" # Multimedia player
       "karabiner-elements" # Keyboard customizer
       "legcord" # Discord client
@@ -274,9 +271,15 @@ in
       "the-unarchiver" # Unpacks archive files
       "timemator" # Automatic time-tracking application
       "topnotch" # Utility to hide the notch
-      "ungoogled-chromium" # Chromium based browser with privacy in mind
       "yubico-authenticator" # Application for configuring YubiKeys
       "zoom" # Video communication and virtual meeting platform
+
+      # Web browser
+      "arc" # Chromium based browser
+      "finicky" # Utility for customizing which browser to start
+      "firefox" # Web browser
+      "helium-browser" # Chromium based browser
+      "ungoogled-chromium" # Chromium based browser with privacy in mind
 
       # Graphic & Image Applications
       "affinity-designer" # Professional graphic design software
