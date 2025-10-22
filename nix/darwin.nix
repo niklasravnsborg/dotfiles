@@ -276,6 +276,7 @@ in
 
       # Web browser
       "arc" # Chromium based browser
+      "chatgpt-atlas" # OpenAI's browser with ChatGPT built in
       "finicky" # Utility for customizing which browser to start
       "firefox" # Web browser
       "helium-browser" # Chromium based browser
