@@ -158,13 +158,14 @@ in
     autohide = true; # automatically hide and show the Dock
   };
 
-  system.activationScripts.activateNik = {
+  system.activationScripts.postActivation = {
     text = ''
       # Set default shell to fish
       sudo chsh -s /run/current-system/sw/bin/fish nik
 
-      # Create a script with proper Nix variable expansion for all user commands
-      script="
+      # Run the following script as user nik
+      sudo -i -u nik bash <<'EOF'
+
         # Disable 'Select the previous input source', because I use Ctrl + Space in Tmux
         defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 60 '<dict><key>enabled</key><false/></dict>'
 
@@ -193,10 +194,8 @@ in
         defaults write com.seriflabs.affinityphoto2 AutoUpdateInterval -bool false
         defaults write com.proxyman.NSProxy isUsingSystemStatusBar -bool false
         defaults write com.proxyman.NSProxy shouldShowUpdatePopup -bool false
-      "
 
-      # Run the script as user nik
-      sudo -u nik bash -c "$script"
+      EOF
     '';
   };
 
