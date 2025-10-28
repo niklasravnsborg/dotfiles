@@ -115,7 +115,6 @@ in
     ".config/yazi/theme.toml" = dotfile "yazi/theme.toml";
     ".config/yazi/yazi.toml" = dotfile "yazi/yazi.toml";
     ".config/yazi/keymap.toml" = dotfile "yazi/keymap.toml";
-    ".config/yazi/init.lua" = dotfile "yazi/init.lua";
   };
 
   # This sets the `XDG_CONFIG_HOME` environment variable to `~/.config`.
@@ -286,6 +285,16 @@ in
 
   programs.yazi = {
     enable = true;
+    plugins = {
+      inherit (pkgs.yaziPlugins)
+        full-border
+        starship
+        ;
+    };
+    initLua = ''
+      require("full-border"):setup()
+      require("starship"):setup()
+    '';
   };
 
   # Universal prompt
