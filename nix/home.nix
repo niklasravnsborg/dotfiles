@@ -52,7 +52,6 @@ in
     gitui # Terminal ui for git
     gnused # GNU version of the famous stream editor
     gnutar # GNU version of the tar archiving utility
-    google-cloud-sdk # Manage resources and applications hosted on Google Cloud
     helix # Post-modern modal text editor
     htop # Improved top (interactive process viewer)
     httpie # User-friendly HTTP client
@@ -184,15 +183,6 @@ in
           repo = "sponge";
           rev = "1.1.0";
           sha256 = "sha256-MdcZUDRtNJdiyo2l9o5ma7nAX84xEJbGFhAVhK+Zm1w=";
-        };
-      }
-      {
-        name = "google-cloud-sdk-fish-completion";
-        src = pkgs.fetchFromGitHub {
-          owner = "lgathy";
-          repo = "google-cloud-sdk-fish-completion";
-          rev = "bc24b0bf7da2addca377d89feece4487ca0b1e9c";
-          sha256 = "sha256-BIbzdxAj3mrf340l4hNkXwA13rIIFnC6BxM6YuJ7/w8=";
         };
       }
       {
