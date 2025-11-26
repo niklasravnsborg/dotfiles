@@ -193,8 +193,6 @@ in
 
         # Disable autoupgrade - Use `brew cu -aqy` to upgrade apps
         defaults write com.DanPristupov.Fork SUEnableAutomaticChecks -bool false
-        defaults write com.seriflabs.affinitydesigner2 AutoUpdateInterval -bool false
-        defaults write com.seriflabs.affinityphoto2 AutoUpdateInterval -bool false
         defaults write com.proxyman.NSProxy isUsingSystemStatusBar -bool false
         defaults write com.proxyman.NSProxy shouldShowUpdatePopup -bool false
 
@@ -248,7 +246,7 @@ in
       # Applications
       "adobe-digital-editions" # E-book verifier and reader
       "beeper" # Universal chat app
-      "bitwarden" # Desktop password and login vault
+      # "bitwarden" # Desktop password and login vault -> Install from App Store to disable auto updates
       "calibre" # E-books management software
       "chatgpt" # ChatGPT macOS app
       "chatwise" # AI chat app
@@ -285,8 +283,7 @@ in
       "ungoogled-chromium" # Chromium based browser with privacy in mind
 
       # Graphic & Image Applications
-      "affinity-designer" # Professional graphic design software
-      "affinity-photo" # Professional image editing software
+      "affinity" # Image editing and design software
       "figma" # Collaborative team software
       "imageoptim" # Tool to optimise images to a smaller size
 
@@ -319,12 +316,11 @@ in
       "raindropio" # Bookmark manager
 
       # Development
-      "bruno" # API Client
+      "bruno" # API client
       "cyberduck" # Server and cloud storage browser
       "dbngin" # Database version management tool
-      "fork" # GIT client
+      "fork" # Git client
       "ghostty" # Terminal emulator that uses platform-native UI and GPU acceleration
-      "httpie-desktop" # Testing client for REST, GraphQL, and HTTP APIs
       "kitty" # GPU-based terminal emulator
       "orbstack" # Replacement for Docker Desktop
       "proxyman" # HTTP debugging proxy
