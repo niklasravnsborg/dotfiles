@@ -61,7 +61,6 @@ in
     micromamba # Environment manager
     ngrok # Reverse proxy, secure tunnels to localhost
     nodePackages.svgo # Optimize SVGs
-    nushell # Modern alternative shell
     pandoc # Document conversion
     posting # API client for the terminal
     restic # Backup program
@@ -72,12 +71,12 @@ in
     yq # Process YAML, JSON, XML, CSV and properties documents
 
     # AI Tools
-    claude-code
     codex
     opencode
 
     # Fun
     asciiquarium # Aquarium animation
+    cbonsai # Bonsai
     cmatrix # Matrix animation
     cowsay # Talking cow
     lolcat # Rainbow colors
