@@ -41,16 +41,21 @@
       com.colliderli.iina webp all
 
       # Most code related files
-      com.exafunction.windsurf public.source-code all
-      com.exafunction.windsurf public.plain-text all
-      com.exafunction.windsurf css all
-      com.exafunction.windsurf fish all
-      com.exafunction.windsurf md all
-      com.exafunction.windsurf mdx all
-      com.exafunction.windsurf nix all
-      com.exafunction.windsurf ts all
-      com.exafunction.windsurf xml all
-      com.exafunction.windsurf xsd all
+      dev.zed.Zed public.source-code all
+      dev.zed.Zed public.plain-text all
+      dev.zed.Zed bru all
+      dev.zed.Zed css all
+      dev.zed.Zed fish all
+      dev.zed.Zed json all
+      dev.zed.Zed md all
+      dev.zed.Zed mdx all
+      dev.zed.Zed mjs all
+      dev.zed.Zed nix all
+      dev.zed.Zed ts all
+      dev.zed.Zed tsx all
+      dev.zed.Zed xml all
+      dev.zed.Zed xsd all
+      dev.zed.Zed yaml all
 
       # C# / .NET
       com.microsoft.VSCode cs all

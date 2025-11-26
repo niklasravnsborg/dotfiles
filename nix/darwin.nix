@@ -332,8 +332,8 @@ in
       "tuple" # Remote pair programming app
       "visual-studio-code" # Open-source code editor
       "warp" # Rust-based terminal
-      "windsurf" # VSCode-fork with AI integration
       "wireshark-app" # Network protocol analyzer
+      "zed" # Code editor
     ];
   };
 
