@@ -41,6 +41,7 @@ in
     age # Secure file encryption
     any-nix-shell # Run nix-shell in any directory
     atuin # Universal history
+    btop # Monitor of resources
     bun # Incredibly fast JavaScript runtime
     cloc # Count lines of code
     cloudflared # Cloudflare tunnel
@@ -97,6 +98,7 @@ in
     ".vimrc" = dotfile "vim/.vimrc";
 
     ".config/atuin/config.toml" = dotfile "atuin/config.toml";
+    ".config/btop/btop.conf" = dotfile "btop/btop.conf";
     ".config/ghostty/config" = dotfile "ghostty/config";
     ".config/gitui/key_bindings.ron" = dotfile "gitui/key_bindings.ron";
     ".config/gitui/theme.ron" = dotfile "gitui/theme.ron";
@@ -106,9 +108,10 @@ in
     ".config/nix/nix.conf" = dotfile "nix/nix.conf";
     ".config/opencode/opencode.jsonc" = dotfile "opencode/opencode.jsonc";
     ".config/opencode/plugin/my-plugin.ts" = dotfile "opencode/plugin/my-plugin.ts";
-
-    ".config/posting/config.yaml" = dotfile "posting/config.yaml";
     ".config/starship.toml" = dotfile "starship/starship.toml";
+
+    # Posting
+    ".config/posting/config.yaml" = dotfile "posting/config.yaml";
     ".local/share/posting/themes/my_theme.yaml" = dotfile "posting/themes/my_theme.yaml";
 
     # Yazi
