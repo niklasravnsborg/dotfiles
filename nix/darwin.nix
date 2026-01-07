@@ -220,6 +220,7 @@ in
     brews = [
       "batt" # Battery manager
       "gnupg" # Although we already have it in home-manager, this gpg binary is the only one that Fork can find
+      "terminal-notifier" # I use this to notify me when my opencode session is done
     ];
 
     casks = [

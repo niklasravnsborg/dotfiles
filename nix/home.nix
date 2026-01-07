@@ -107,7 +107,7 @@ in
     ".config/kitty/kitty.conf" = dotfile "kitty/kitty.conf";
     ".config/nix/nix.conf" = dotfile "nix/nix.conf";
     ".config/opencode/opencode.jsonc" = dotfile "opencode/opencode.jsonc";
-    ".config/opencode/plugin/my-plugin.ts" = dotfile "opencode/plugin/my-plugin.ts";
+    ".config/opencode/plugin/my-plugins.ts" = dotfile "opencode/plugin/my-plugins.ts";
     ".config/starship.toml" = dotfile "starship/starship.toml";
 
     # Posting
