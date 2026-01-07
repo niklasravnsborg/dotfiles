@@ -295,7 +295,9 @@ in
       "blackhole-2ch" # Virtual Audio Driver
       "motu-m-series" # Driver for Motu M-Series audio interfaces
       "musescore" # Open-source music notation software
-      "native-access" # Installer for Native Instruments products
+      "ik-product-manager" # Installer IK Multimedia software
+      "izotope-product-portal" # Installer for Izotope software
+      "native-access" # Installer for Native Instruments software
 
       # Audio Plugins
       "fabfilter-pro-q" # Equalizer
