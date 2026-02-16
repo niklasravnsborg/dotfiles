@@ -289,12 +289,17 @@ in
       "imageoptim" # Tool to optimise images to a smaller size
 
       # Audio & Music Applications
-      "ableset" # Live setlist manager for Ableton
-      "ableton-live-standard" # Music production software
-      "audacity" # Cross-platform audio software
-      "blackhole-2ch" # Virtual Audio Driver
+      "ableton-live-standard" # Live music performance
+      "ableset" # Setlist manager for Ableton
+      "audacity" # Audio editing
+      "musescore" # Music notation
+      "blackhole-2ch" # Virtual Audio Driver with 2 channels
+      "blackhole-16ch" # Virtual Audio Driver with 16 channels
+      "mixing-station" # Audio mixer controller
       "motu-m-series" # Driver for Motu M-Series audio interfaces
-      "musescore" # Open-source music notation software
+      "soundsource" # Audio device driver
+
+      # Audio product managers
       "ik-product-manager" # Installer IK Multimedia software
       "izotope-product-portal" # Installer for Izotope software
       "native-access" # Installer for Native Instruments software
