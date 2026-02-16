@@ -257,6 +257,7 @@ in
       "karabiner-elements" # Keyboard customizer
       "legcord" # Discord client
       "macfuse" # File system integration
+      "monitorcontrol" # Utility to control external monitors
       "numi" # Calculator and converter application
       "opensuperwhisper" # Whisper client for macOS
       "phoenix" # Window and app manager scriptable with JavaScript
