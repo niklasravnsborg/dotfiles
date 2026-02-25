@@ -21,8 +21,6 @@
 	tool = vscode
 [mergetool "vscode"]
 	cmd = code --wait $MERGED
-[rerere]
-	enabled = true
 [diff]
 	colorMoved = default
 [delta]
