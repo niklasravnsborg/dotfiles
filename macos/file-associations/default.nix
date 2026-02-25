@@ -46,11 +46,14 @@
       dev.zed.Zed bru all
       dev.zed.Zed css all
       dev.zed.Zed fish all
+      dev.zed.Zed go all
       dev.zed.Zed json all
       dev.zed.Zed md all
       dev.zed.Zed mdx all
       dev.zed.Zed mjs all
       dev.zed.Zed nix all
+      dev.zed.Zed php all
+      dev.zed.Zed py all
       dev.zed.Zed ts all
       dev.zed.Zed tsx all
       dev.zed.Zed xml all
