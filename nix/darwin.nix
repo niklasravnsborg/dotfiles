@@ -185,6 +185,9 @@ in
         # Configure Final Cut to enable timeline rendering during playback
         defaults write com.apple.FinalCut FFSuspendBGOpsDuringPlay 0
 
+        # Always keep these apps in light mode
+        defaults write com.apple.mail NSRequiresAquaSystemAppearance -bool yes
+
         # Configure Apple Mail
         defaults write com.apple.mail ShowCcHeader 0
         defaults write com.apple.mail EnableContactPhotos 1
