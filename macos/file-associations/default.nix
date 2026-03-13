@@ -56,9 +56,17 @@
       dev.zed.Zed py all
       dev.zed.Zed ts all
       dev.zed.Zed tsx all
-      dev.zed.Zed xml all
-      dev.zed.Zed xsd all
       dev.zed.Zed yaml all
+
+      # e.g. Makefile
+      dev.zed.Zed public.make-source all
+
+      # e.g. Dockerfile, .dockerignore
+      dev.zed.Zed public.data all
+
+      # XML related
+      com.microsoft.VSCode xml all
+      com.microsoft.VSCode xsd all
 
       # C# / .NET
       com.microsoft.VSCode cs all
