@@ -277,11 +277,9 @@ in
       "timemator" # Automatic time-tracking application
       "topnotch" # Utility to hide the notch
       "yubico-authenticator" # Application for configuring YubiKeys
-      "zoom" # Video communication and virtual meeting platform
 
       # Web browser
       "arc" # Chromium based browser
-      "chatgpt-atlas" # OpenAI's browser with ChatGPT built in
       "finicky" # Utility for customizing which browser to start
       "firefox" # Web browser
       "helium-browser" # Chromium based browser
@@ -339,7 +337,6 @@ in
       "tableplus" # Native GUI tool for relational databases
       "tuple" # Remote pair programming app
       "visual-studio-code" # Open-source code editor
-      "warp" # Rust-based terminal
       "wireshark-app" # Network protocol analyzer
       "zed" # Code editor
     ];
