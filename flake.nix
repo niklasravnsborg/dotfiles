@@ -112,11 +112,11 @@
     in
     {
       # for `nix fmt`
-      formatter = eachSystem (pkgs: treefmtEval.${pkgs.system}.config.build.wrapper);
+      formatter = eachSystem (pkgs: treefmtEval.${pkgs.stdenv.hostPlatform.system}.config.build.wrapper);
 
       # for `nix flake check`
       checks = eachSystem (pkgs: {
-        formatting = treefmtEval.${pkgs.system}.config.build.check inputs.self;
+        formatting = treefmtEval.${pkgs.stdenv.hostPlatform.system}.config.build.check inputs.self;
       });
 
       # development environment, enabled via `.envrc`

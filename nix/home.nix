@@ -34,7 +34,7 @@ let
   };
 in
 {
-  home.stateVersion = "23.11";
+  home.stateVersion = "26.05";
 
   home.packages = with pkgs; [
     act # Run GitHub Actions locally
@@ -159,11 +159,14 @@ in
       cp -R ${configDir}/macos/niklas.keylayout ~/Library/Keyboard\ Layouts/
     '';
     # I would prefer to symlink this file, but macOS seems to ignore symlinks in LaunchAgents
-    copyTimematorRestart = lib.optionalAttrs pkgs.stdenv.isDarwin ''cp -R ${configDir}/macos/timemator.restart.plist ~/Library/LaunchAgents/'';
+    copyTimematorRestart = lib.optionalAttrs pkgs.stdenv.isDarwin "cp -R ${configDir}/macos/timemator.restart.plist ~/Library/LaunchAgents/";
   };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  # Disable man cache generation since we're not using a custom man package
+  programs.man.generateCaches = false;
 
   programs.fish = {
     enable = true;
@@ -353,10 +356,12 @@ in
     settings = {
       promptToReturnFromSubprocess = false;
       git = {
-        paging = {
-          colorArg = "always";
-          pager = "delta --paging=never";
-        };
+        pagers = [
+          {
+            pager = "delta --paging=never";
+            colorArg = "always";
+          }
+        ];
         commit = {
           autoWrapCommitMessage = false;
         };
