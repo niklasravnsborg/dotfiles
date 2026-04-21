@@ -1,6 +1,5 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "theme": "system",
   "plugin": ["opencode-gemini-auth", "opencode-anthropic-auth"],
   "mcp": {
     "context7": {
