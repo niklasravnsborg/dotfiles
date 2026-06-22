@@ -311,7 +311,9 @@ in
       "fabfilter-pro-l" # Limiter
       "fabfilter-pro-c" # Compressor
       "fabfilter-pro-mb" # Multi-band compressor
+      "fabfilter-pro-r" # Reverb
       "fabfilter-saturn" # Saturation
+      "fabfilter-twin" # Synthesizer
       "youlean-loudness-meter" # Loudness Meter
       "tdr-prism" # Frequency analyzer
 
