@@ -105,6 +105,7 @@ in
     ".config/gitui/theme.ron" = dotfile "gitui/theme.ron";
     ".config/helix/config.toml" = dotfile "helix/config.toml";
     ".config/helix/themes/my_theme.toml" = dotfile "helix/my_theme.toml";
+    ".config/herdr/config.toml" = dotfile "herdr/config.toml";
     ".config/kitty/kitty.conf" = dotfile "kitty/kitty.conf";
     ".config/nix/nix.conf" = dotfile "nix/nix.conf";
     ".config/opencode/opencode.jsonc" = dotfile "opencode/opencode.jsonc";

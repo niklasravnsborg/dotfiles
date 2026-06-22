@@ -1,0 +1,10 @@
+onboarding = false
+
+[keys]
+prefix = "ctrl+space"
+
+[theme]
+name = "nord"
+
+[ui]
+agent_panel_scope = "all"
