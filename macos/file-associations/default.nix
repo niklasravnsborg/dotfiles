@@ -43,6 +43,7 @@
       # Most code related files
       dev.zed.Zed public.source-code all
       dev.zed.Zed public.plain-text all
+      dev.zed.Zed astro all
       dev.zed.Zed bru all
       dev.zed.Zed css all
       dev.zed.Zed fish all
