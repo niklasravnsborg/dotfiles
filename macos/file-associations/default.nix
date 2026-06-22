@@ -55,6 +55,8 @@
       dev.zed.Zed nix all
       dev.zed.Zed php all
       dev.zed.Zed py all
+      dev.zed.Zed scss all
+      dev.zed.Zed toml all
       dev.zed.Zed ts all
       dev.zed.Zed tsx all
       dev.zed.Zed yaml all
