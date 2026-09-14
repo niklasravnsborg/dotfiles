@@ -261,6 +261,7 @@ in
       "karabiner-elements" # Keyboard customizer
       "legcord" # Discord client
       "macfuse" # File system integration
+      "macshot" # Utility for taking screenshots
       "monitorcontrol" # Utility to control external monitors
       "numi" # Calculator and converter application
       "opensuperwhisper" # Whisper client for macOS
@@ -271,6 +272,7 @@ in
       "rwts-pdfwriter" # Print driver for printing documents directly to a pdf file
       "scroll-reverser" # Set mouse scroll directions independently
       "signal" # Instant messaging application focusing on security
+      "space-rabbit" # Remove animations when switching macOS Spaces
       "spotify" # Music streaming service
       "stats" # System monitor for the menu bar
       "telegram" # Messaging app with a focus on speed and security
@@ -297,7 +299,7 @@ in
       "audacity" # Audio editing
       "musescore" # Music notation
       "blackhole-2ch" # Virtual Audio Driver with 2 channels
-      "blackhole-16ch" # Virtual Audio Driver with 16 channels
+      "blackhole-64ch" # Virtual Audio Driver with 64 channels
       "mixing-station" # Audio mixer controller
       "motu-m-series" # Driver for Motu M-Series audio interfaces
       "soundsource" # Audio device driver
@@ -337,6 +339,7 @@ in
       "kitty" # GPU-based terminal emulator
       "orbstack" # Replacement for Docker Desktop
       "proxyman" # HTTP debugging proxy
+      "t3-code" # Agent control plane
       "tableplus" # Native GUI tool for relational databases
       "tuple" # Remote pair programming app
       "visual-studio-code" # Open-source code editor
