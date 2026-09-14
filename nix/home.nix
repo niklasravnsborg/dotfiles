@@ -116,9 +116,15 @@ in
     ".config/opencode/plugin/my-plugins.ts" = dotfile "opencode/plugin/my-plugins.ts";
     ".config/starship.toml" = dotfile "starship/starship.toml";
 
+    ".claude/CLAUDE.md" = dotfile "claude/CLAUDE.md";
+    ".claude/skills/" = dotfile ".agents/skills/";
+
     # Posting
     ".config/posting/config.yaml" = dotfile "posting/config.yaml";
     ".local/share/posting/themes/my_theme.yaml" = dotfile "posting/themes/my_theme.yaml";
+
+    ".agents/" = dotfile ".agents/";
+    ".codex/AGENTS.md" = dotfile ".agents/AGENTS.md";
 
     # Yazi
     ".config/yazi/theme.toml" = dotfile "yazi/theme.toml";
