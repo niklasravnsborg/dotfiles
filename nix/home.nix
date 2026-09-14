@@ -2,6 +2,7 @@
   pkgs,
   config,
   lib,
+  llmAgents,
   secretsPath,
   ...
 }:
@@ -30,6 +31,7 @@ let
   };
   homePath = config.home.homeDirectory;
   configDir = "${homePath}/dotfiles";
+  llmAgentPackages = llmAgents.packages.${pkgs.stdenv.hostPlatform.system};
   dotfile = file: {
     source = config.lib.file.mkOutOfStoreSymlink "${configDir}/${file}";
   };
@@ -72,8 +74,9 @@ in
     yq # Process YAML, JSON, XML, CSV and properties documents
 
     # AI Tools
-    codex
-    opencode
+    llmAgentPackages.claude-code
+    llmAgentPackages.codex
+    llmAgentPackages.opencode
 
     # Fun
     asciiquarium # Aquarium animation

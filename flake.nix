@@ -1,10 +1,18 @@
 {
   description = "Niklas dotfiles";
 
+  nixConfig = {
+    extra-substituters = [ "https://cache.numtide.com" ];
+    extra-trusted-public-keys = [
+      "niks3.numtide.com-1:DTx8wZduET09hRmMtKdQDxNNthLQETkc/yaX7M4qK0g="
+    ];
+  };
+
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     treefmt-nix.url = "github:numtide/treefmt-nix";
     systems.url = "github:nix-systems/default";
+    llm-agents.url = "github:numtide/llm-agents.nix";
     nix-darwin = {
       url = "github:nix-darwin/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -54,6 +62,7 @@
         ];
         extraSpecialArgs = {
           inherit secretsPath;
+          llmAgents = inputs.llm-agents;
         };
       };
       darwinSystem = inputs.nix-darwin.lib.darwinSystem {
