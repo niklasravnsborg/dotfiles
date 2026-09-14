@@ -94,13 +94,13 @@
         system = systems.nixos;
         specialArgs = {
           inherit secretsPath;
-          pkgs = myNixpkgs systems.nixos;
         };
         modules = [
           ./nixos/configuration.nix
           inputs.sops-nix.nixosModules.sops
           inputs.home-manager.nixosModules.home-manager
           {
+            nixpkgs.config.allowUnfree = true;
             home-manager = homeManagerConfig // {
               useUserPackages = true;
             };
@@ -108,7 +108,7 @@
         ];
       };
 
-      # Small tool to iterate over each systems
+      # Small tool to iterate over each system
       eachSystem =
         f:
         inputs.nixpkgs.lib.genAttrs (import inputs.systems) (
@@ -129,15 +129,14 @@
       });
 
       # development environment, enabled via `.envrc`
-      devShell = eachSystem (
-        pkgs:
-        pkgs.mkShell {
+      devShells = eachSystem (pkgs: {
+        default = pkgs.mkShell {
           packages = with pkgs; [
             nixd
             nixfmt
           ];
-        }
-      );
+        };
+      });
 
       darwinConfigurations."Barrakuda" = darwinSystem;
       darwinConfigurations."Mantarochen" = darwinSystem;

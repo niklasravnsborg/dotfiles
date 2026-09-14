@@ -14,7 +14,7 @@ let
     lg = "TERM=xterm-256color lazygit";
     man = "batman";
     nix-switch =
-      if pkgs.stdenv.isDarwin then
+      if pkgs.stdenv.hostPlatform.isDarwin then
         "sudo darwin-rebuild switch --flake ~/dotfiles"
       else
         "sudo nixos-rebuild switch --flake ~/dotfiles";
@@ -63,7 +63,7 @@ in
     less # Pager program
     micromamba # Environment manager
     ngrok # Reverse proxy, secure tunnels to localhost
-    nodePackages.svgo # Optimize SVGs
+    svgo # Optimize SVGs
     pandoc # Document conversion
     posting # API client for the terminal
     restic # Backup program
@@ -165,13 +165,13 @@ in
     '';
 
   }
-  // lib.optionalAttrs pkgs.stdenv.isDarwin {
-    copyKeyboardLayout = lib.optionalAttrs pkgs.stdenv.isDarwin ''
+  // lib.optionalAttrs pkgs.stdenv.hostPlatform.isDarwin {
+    copyKeyboardLayout = ''
       mkdir -p ~/Library/Keyboard\ Layouts/
       cp -R ${configDir}/macos/niklas.keylayout ~/Library/Keyboard\ Layouts/
     '';
     # I would prefer to symlink this file, but macOS seems to ignore symlinks in LaunchAgents
-    copyTimematorRestart = lib.optionalAttrs pkgs.stdenv.isDarwin "cp -R ${configDir}/macos/timemator.restart.plist ~/Library/LaunchAgents/";
+    copyTimematorRestart = "cp -R ${configDir}/macos/timemator.restart.plist ~/Library/LaunchAgents/";
   };
 
   # Let Home Manager install and manage itself.
@@ -285,7 +285,8 @@ in
 
   services.gpg-agent = {
     enable = true;
-    pinentry.package = if pkgs.stdenv.isDarwin then pkgs.pinentry_mac else pkgs.pinentry;
+    pinentry.package =
+      if pkgs.stdenv.hostPlatform.isDarwin then pkgs.pinentry_mac else pkgs.pinentry-curses;
   };
 
   programs.direnv = {
@@ -368,9 +369,9 @@ in
     settings = {
       promptToReturnFromSubprocess = false;
       git = {
-        pagers = [
+        diffRenderers = [
           {
-            pager = "delta --paging=never";
+            command = "delta --paging=never";
             colorArg = "always";
           }
         ];
