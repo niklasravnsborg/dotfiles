@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Add bun bin
-PATH=$PATH:$HOME/.bun/bin
+PATH=$PATH:$XDG_CACHE_HOME/.bun/bin
 
 # Disable brew auto update
 export HOMEBREW_NO_AUTO_UPDATE=true

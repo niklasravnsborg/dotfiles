@@ -3,7 +3,7 @@
 # added ~200ms to shell startup time, which is quite a lot.
 
 # Add bun bin
-set -a PATH $HOME/.bun/bin
+set -a PATH $XDG_CACHE_HOME/.bun/bin
 
 # Disable brew auto update
 set -gx HOMEBREW_NO_AUTO_UPDATE true
