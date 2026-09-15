@@ -1,4 +1,4 @@
-"$schema" = "https://raw.githubusercontent.com/yazi-rs/schemas/main/schemas/yazi.json"
+#:schema https://raw.githubusercontent.com/yazi-rs/schemas/main/schemas/yazi.json
 
 [mgr]
 ratio = [0, 1, 1]

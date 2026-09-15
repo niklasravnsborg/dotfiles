@@ -1,5 +1,4 @@
-# Get editor completions based on the config schema
-"$schema" = 'https://starship.rs/config-schema.json'
+#:schema https://starship.rs/config-schema.json
 
 format = """
 $all$fill$memory_usage$time$line_break\

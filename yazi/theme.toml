@@ -1,4 +1,4 @@
-"$schema" = "https://raw.githubusercontent.com/yazi-rs/schemas/main/schemas/theme.json"
+#:schema https://raw.githubusercontent.com/yazi-rs/schemas/main/schemas/theme.json
 
 [mgr]
 border_symbol = " "
