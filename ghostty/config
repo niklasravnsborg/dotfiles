@@ -5,6 +5,9 @@ adjust-cell-height = 10%
 window-padding-x = 20
 window-padding-y = 10
 
+# Use a terminfo entry that is available on typical SSH hosts.
+term = xterm-256color
+
 # Maximize default window
 window-width = 173
 window-height = 43
