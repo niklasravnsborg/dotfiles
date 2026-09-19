@@ -207,8 +207,6 @@ in
     enable = true;
 
     onActivation = {
-      autoUpdate = true;
-      upgrade = true;
       # `zap` will move related files of apps that are removed to the trash
       cleanup = "zap";
       # This will force an overwrite of apps already present
