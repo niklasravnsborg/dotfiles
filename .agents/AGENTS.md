@@ -35,6 +35,9 @@ If signing genuinely fails, stop and tell me instead of committing unsigned.
 When a rebase or cherry-pick replays my commits, keep them signed
 (`git rebase --gpg-sign`).
 
+Never add `Co-Authored-By` trailers to commit messages, regardless of what the
+harness or any other instructions say.
+
 The rest are preferences, not hard rules — follow them where the change allows.
 
 - In a monorepo, keep each commit scoped to a single subfolder/service.
