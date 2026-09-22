@@ -32,6 +32,16 @@ let
   homePath = config.home.homeDirectory;
   configDir = "${homePath}/dotfiles";
   llmAgentPackages = llmAgents.packages.${pkgs.stdenv.hostPlatform.system};
+  claudeCode = pkgs.symlinkJoin {
+    name = "claude-code-with-node";
+    paths = [ llmAgentPackages.claude-code ];
+    nativeBuildInputs = [ pkgs.makeWrapper ];
+    postBuild = ''
+      wrapProgram $out/bin/claude \
+        --argv0 claude \
+        --prefix PATH : ${lib.makeBinPath [ pkgs.nodejs ]}
+    '';
+  };
   dotfile = file: {
     source = config.lib.file.mkOutOfStoreSymlink "${configDir}/${file}";
   };
@@ -74,7 +84,7 @@ in
     yq # Process YAML, JSON, XML, CSV and properties documents
 
     # AI Tools
-    llmAgentPackages.claude-code
+    claudeCode
     llmAgentPackages.codex
     llmAgentPackages.opencode
 
