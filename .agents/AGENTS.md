@@ -29,7 +29,13 @@ When uncertain, prefer: Tailwind, TypeScript, Bun, React, Convex, Clerk, Vercel.
 
 ## Commits
 
-Preferences, not hard rules — follow them where the change allows.
+Commits are signed. `commit.gpgsign` is on in my config — never pass
+`-c commit.gpgsign=false` or `--no-gpg-sign` to work around a signing prompt.
+If signing genuinely fails, stop and tell me instead of committing unsigned.
+When a rebase or cherry-pick replays my commits, keep them signed
+(`git rebase --gpg-sign`).
+
+The rest are preferences, not hard rules — follow them where the change allows.
 
 - In a monorepo, keep each commit scoped to a single subfolder/service.
 - Keep commits atomic: one self-contained change per commit.
