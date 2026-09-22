@@ -15,6 +15,8 @@ Keep an eye on changes to 'main' and rebase when needed. If an overlapping PR ma
 
 If a review bot leaves feedback you believe is not worth addressing, reply and resolve the comment. Every comment you post follows the `github-comment` skill. Screenshots and videos help as well.
 
+Once a bot's finding is actually addressed, resolve its thread on GitHub — a pushed fix does not resolve anything by itself. The `gh-pr-review` extension is always installed: `gh pr-review threads list --unresolved -R owner/repo <pr>` shows what is open, `gh pr-review threads resolve --thread-id <PRRT_...> -R owner/repo <pr>` closes one out. Before you report the PR as ready, check that no unresolved bot threads are left; if one is still open on purpose, say why.
+
 Do not let review feedback expand the PR beyond the user's original goal. Address real shortcomings, but avoid scope creep.
 
 If nothing has changed, stay quiet rather than posting filler comments. Stop when the review bots and required checks are green on the latest commit. Merge only when the user explicitly requested it; otherwise report that the PR is ready.

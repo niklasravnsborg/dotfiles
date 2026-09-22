@@ -61,7 +61,6 @@ in
     delta # Syntax-highlighter for git and diff output
     fd # Alternative to find
     ffmpeg_7 # Play, record, convert, and stream audio and video
-    gh # GitHub command-line tool
     git # Version control system
     gitui # Terminal ui for git
     gnused # GNU version of the famous stream editor
@@ -373,6 +372,21 @@ in
         installManPage man/man1/fzf.1 man/man1/fzf-tmux.1
       '';
     });
+  };
+
+  # GitHub command-line tool
+  programs.gh = {
+    enable = true;
+    settings = {
+      git_protocol = "ssh";
+      aliases = {
+        co = "pr checkout";
+      };
+    };
+    extensions = [
+      # Inline PR review comments: list, reply to and resolve review threads
+      pkgs.gh-pr-review
+    ];
   };
 
   programs.lazygit = {
