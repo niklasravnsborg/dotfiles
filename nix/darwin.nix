@@ -166,9 +166,6 @@ in
       # Run the following script as user nik
       sudo -i -u nik bash <<'EOF'
 
-        # Run batt service
-        sudo brew services restart batt
-
         # Disable 'Select the previous input source', because I use Ctrl + Space in Tmux
         defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 60 '<dict><key>enabled</key><false/></dict>'
 
