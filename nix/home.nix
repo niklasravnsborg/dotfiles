@@ -85,6 +85,7 @@ in
 
     # AI Tools
     claudeCode
+    llmAgentPackages.clauth
     llmAgentPackages.codex
     llmAgentPackages.opencode
 
