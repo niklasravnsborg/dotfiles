@@ -220,6 +220,7 @@ in
       "gnupg" # Although we already have it in home-manager, this gpg binary is the only one that Fork can find
       "herdr" # Agent multiplexer for the terminal
       "terminal-notifier" # I use this to notify me when my opencode session is done
+      "python" # Needed for claude and other agent stuff
     ];
 
     casks = [
