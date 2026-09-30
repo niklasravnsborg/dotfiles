@@ -44,3 +44,10 @@ The rest are preferences, not hard rules — follow them where the change allows
 - Keep commits atomic: one self-contained change per commit.
 - When commits depend on each other, order them so dependencies come first.
 - If a change genuinely spans services (e.g. a shared type plus its consumers), one commit is fine — say so rather than splitting into commits that don't build.
+
+## Pull requests
+
+PR titles are not commit messages. Write them as a sentence: uppercase first
+letter, no `scope:` prefix. "Forward system events to Axiom", not
+"functions, pulumi: forward system events to Axiom" — the scope belongs in the
+commits inside the PR, not on the PR itself.
