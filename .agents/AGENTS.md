@@ -27,6 +27,11 @@ When uncertain, prefer: Tailwind, TypeScript, Bun, React, Convex, Clerk, Vercel.
 - Don't run build commands unless specifically told to.
 - Do run checking commands like `bun run typecheck`, `bun run lint`.
 
+## Branches
+
+Always work on the branch that is currently checked out, including `main`.
+Don't create or switch branches unless I ask.
+
 ## Commits
 
 Commits are signed. `commit.gpgsign` is on in my config — never pass
