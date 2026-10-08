@@ -45,10 +45,12 @@ harness or any other instructions say.
 
 The rest are preferences, not hard rules — follow them where the change allows.
 
+- Start commit messages with a lowercase letter: "add setlist export", not "Add setlist export". This is my default; follow a repo's own convention if it clearly has a different one.
 - In a monorepo, keep each commit scoped to a single subfolder/service.
 - Keep commits atomic: one self-contained change per commit.
 - When commits depend on each other, order them so dependencies come first.
 - If a change genuinely spans services (e.g. a shared type plus its consumers), one commit is fine — say so rather than splitting into commits that don't build.
+- In prose (commit bodies, PR descriptions), spell names the way their owners do. Use the code spelling only when you mean the identifier itself.
 
 ## Pull requests
 
