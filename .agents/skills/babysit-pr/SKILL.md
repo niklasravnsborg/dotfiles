@@ -17,6 +17,8 @@ If a review bot leaves feedback you believe is not worth addressing, reply and r
 
 Once a bot's finding is actually addressed, resolve its thread on GitHub — a pushed fix does not resolve anything by itself. The `gh-pr-review` extension is always installed: `gh pr-review threads list --unresolved -R owner/repo <pr>` shows what is open, `gh pr-review threads resolve --thread-id <PRRT_...> -R owner/repo <pr>` closes one out. Before you report the PR as ready, check that no unresolved bot threads are left; if one is still open on purpose, say why.
 
+Fold review fixes into the commit that introduced the code, so history reads as if it had been right the first time. Commit with `git commit --fixup=<sha>`, then `GIT_SEQUENCE_EDITOR=: git rebase -i --autosquash --gpg-sign <base>` and push with `--force-with-lease`. A fix that is a genuinely separate change keeps its own commit. Rewriting changes SHAs, so reply to the thread after the push and reference the rewritten commit. If a human reviewer is already on the PR, ask before rewriting what they have seen.
+
 Do not let review feedback expand the PR beyond the user's original goal. Address real shortcomings, but avoid scope creep.
 
 If nothing has changed, stay quiet rather than posting filler comments. Stop when the review bots and required checks are green on the latest commit. Merge only when the user explicitly requested it; otherwise report that the PR is ready.
