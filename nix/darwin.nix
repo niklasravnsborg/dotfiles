@@ -154,10 +154,6 @@ in
     AppleSpacesSwitchOnActivate = false; # Disable switching to a space when an application is activated
   };
 
-  system.defaults.dock = {
-    autohide = true; # automatically hide and show the Dock
-  };
-
   system.activationScripts.postActivation = {
     text = ''
       # Set default shell to fish
