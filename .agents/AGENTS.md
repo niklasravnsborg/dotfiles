@@ -49,7 +49,7 @@ The rest are preferences, not hard rules — follow them where the change allows
 - In a monorepo, keep each commit scoped to a single subfolder/service.
 - Keep commits atomic: one self-contained change per commit.
 - When commits depend on each other, order them so dependencies come first.
-- If a change genuinely spans services (e.g. a shared type plus its consumers), one commit is fine — say so rather than splitting into commits that don't build.
+- A commit can span multiple services or scopes where that makes sense, e.g. when the parts don't work on their own. Say so rather than splitting into commits that don't build.
 - In prose (commit bodies, PR descriptions), spell names the way their owners do. Use the code spelling only when you mean the identifier itself.
 
 ## Pull requests
@@ -58,3 +58,8 @@ PR titles are not commit messages. Write them as a sentence: uppercase first
 letter, no `scope:` prefix. "Forward system events to Axiom", not
 "functions, pulumi: forward system events to Axiom" — the scope belongs in the
 commits inside the PR, not on the PR itself.
+
+## When to stop
+
+When a step doesn't need my input, keep going. Put status notes in the same message as your next action.
+Stop and ask only when you can't continue without me, or before anything destructive: deleting data, force-pushing, or changing anything outside the repository.
