@@ -33,6 +33,8 @@ Apply these rules to all writing. Before sending, scan for AI patterns and rewri
 
 When uncertain, prefer: Tailwind, TypeScript, Bun, React, Convex, Clerk, Vercel.
 
+For scripts, use TypeScript with Bun Shell (`import { $ } from 'bun'`) instead of bash.
+
 ## Package managers
 
 - Use pnpm if the project already uses it, otherwise use bun.
