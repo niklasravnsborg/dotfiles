@@ -13,3 +13,5 @@ Host *
 Host workstation.niklasravnsborg.com
   ForwardAgent yes
   ProxyCommand cloudflared access ssh --hostname %h
+Host barrakuda mantarochen
+  ForwardAgent yes
