@@ -51,7 +51,7 @@
           inherit system;
           config.allowUnfree = true;
         };
-      secretsPath = builtins.toString inputs.dotfiles-secrets;
+      secretsPath = toString inputs.dotfiles-secrets;
       homeManagerConfig = {
         useGlobalPkgs = true;
         users.nik = import ./nix/home.nix;
