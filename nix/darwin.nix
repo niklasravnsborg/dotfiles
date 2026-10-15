@@ -33,6 +33,10 @@ in
     };
   };
 
+  services.tailscale = {
+    enable = true;
+  };
+
   services.nextdns.enable = true;
   # Manually start and stop the nextdns service with:
   # `sudo launchctl bootout system /Library/LaunchDaemons/org.nixos.nextdns.plist`
