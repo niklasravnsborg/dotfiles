@@ -28,7 +28,8 @@ How to apply:
 - Bulk/mechanical work (clear-spec implementation, data analysis, migrations): gpt-6.1-sol — the main workhorse, it's effectively free.
 - Computer use (UI verification, screenshots, browser/simulator flows): gpt-6-astra.
 - Anything user-facing (UI, copy, API design) needs taste ≥ 7.
-- Reviews of plans/implementations: fable-5.1 or opus-5.5, optionally gpt-6.1-sol as an extra independent perspective.
+- Claude subagents (design, UI, reviews, judgment-heavy implementation): opus-5.5 by default. It costs much less than fable-5.1. Use fable-5.1 only with a specific reason, e.g. opus-5.5 already fell short on the task.
+- Reviews of plans/implementations: opus-5.5, optionally gpt-6.1-sol as an extra independent perspective.
 - Never use Haiku. Sonnet is only for the thin Codex wrapper agents below, not for real work.
 - Mechanics: the GPT models are only reachable through the Codex CLI — `codex exec` / `codex review`. My ~/.codex/config.toml defaults to gpt-6.1-sol at low reasoning effort; pass `-m gpt-6-astra` for Astra and `-c model_reasoning_effort="high"` for judgment-heavy runs. Use the codex-implementation, codex-review, and codex-computer-use skills; for work they don't cover (investigation, data analysis), run `codex exec -s read-only` directly with a self-contained prompt.
 - Claude models (opus-5.5, fable-5.1, and sonnet for wrappers) run via the Agent/Workflow model parameter. Using GPT models inside workflows and subagents (the model parameter only takes Claude models, so use a wrapper):
