@@ -78,6 +78,8 @@ letter, no `scope:` prefix. "Forward system events to Axiom", not
 "functions, pulumi: forward system events to Axiom" — the scope belongs in the
 commits inside the PR, not on the PR itself.
 
+Assign every PR you create to me (`gh pr create --assignee @me`).
+
 ## When to stop
 
 When a step doesn't need my input, keep going. Put status notes in the same message as your next action.
