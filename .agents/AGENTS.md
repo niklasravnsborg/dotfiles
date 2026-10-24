@@ -80,6 +80,13 @@ commits inside the PR, not on the PR itself.
 
 Assign every PR you create to me (`gh pr create --assignee @me`).
 
+Before creating a PR, check the branch name against the repository's branch
+conventions, e.g. in its AGENTS.md or CONTRIBUTING.md. Remove prefixes the
+convention doesn't ask for, such as `t3/`, `claude/` or `codex/` added by
+tools, and rename the branch with `git branch -m` before pushing. Once the PR
+exists, the branch can't be renamed anymore. If the branch is already on the
+remote, ask me before pushing it under the new name and deleting the old one.
+
 ## When to stop
 
 When a step doesn't need my input, keep going. Put status notes in the same message as your next action.
