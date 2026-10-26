@@ -80,6 +80,10 @@ commits inside the PR, not on the PR itself.
 
 Assign every PR you create to me (`gh pr create --assignee @me`).
 
+When monitoring a PR, follow the babysit-pr skill, also when a harness tool such
+as T3 Code's `watch_pull_request` does the watching. Load it on every wake-up:
+review fixes go into the commit they fix, and addressed threads get resolved.
+
 Before creating a PR, check the branch name against the repository's branch
 conventions, e.g. in its AGENTS.md or CONTRIBUTING.md. Remove prefixes the
 convention doesn't ask for, such as `t3/`, `claude/` or `codex/` added by
