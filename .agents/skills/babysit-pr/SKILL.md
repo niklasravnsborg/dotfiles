@@ -13,7 +13,7 @@ Only act on checks and comments newer than the latest push. Verify every bot fin
 
 Keep an eye on changes to 'main' and rebase when needed. If an overlapping PR makes this one obsolete, stop monitoring, report it to the user, and ask before closing the PR unless closure was explicitly authorized.
 
-If a review bot leaves feedback you believe is not worth addressing, reply and resolve the comment. Every comment you post follows the `github-comment` skill. Screenshots and videos help as well.
+If a review bot leaves feedback you believe is not worth addressing, reply and resolve the comment. Every comment you post follows the `github-post` skill. Screenshots and videos help as well.
 
 Once a bot's finding is actually addressed, resolve its thread on GitHub — a pushed fix does not resolve anything by itself. The `gh-pr-review` extension is always installed: `gh pr-review threads list --unresolved -R owner/repo <pr>` shows what is open, `gh pr-review threads resolve --thread-id <PRRT_...> -R owner/repo <pr>` closes one out. Before you report the PR as ready, check that no unresolved bot threads are left; if one is still open on purpose, say why.
 
