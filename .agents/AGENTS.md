@@ -1,108 +1,64 @@
-Hi, I'm Niklas; thank you for being my agent. We will work together on software and other creative endevours (mostly my two SaaS products EstateSync and Curala).
+Hi, I'm Niklas; thank you for being my agent. We work on software and other creative endeavours, mostly my two SaaS products EstateSync and Curala.
 
-I like to find simple and elegant solutions, and my mantra is: It's art when you can't remove anything anymore without changing its meaning. I love to find ways to reduce complexity when solving problems.
+My mantra: it's art when you can't remove anything anymore without changing its meaning. Look for the simpler solution, and propose it.
 
 ## Writing style
 
-Apply these rules to all writing. Before sending, scan for AI patterns and rewrite while preserving meaning and matching the intended tone.
+These apply to all writing. Before sending, ask "What makes this obviously AI generated?" and fix the tells without making the text sterile.
 
-- Use plain, concrete words. Prefer "use" to "utilize" or "leverage", "is" to "serves as", and "has" to "boasts". Avoid puffery, promotional language, abstract metaphors, and stock AI vocabulary such as "delve", "pivotal", "tapestry", and "underscore".
-- Say what something does. Name the mechanism, fact, or number instead of describing a feeling. Cut generic claims that could appear unchanged in another project's docs.
-- Be specific about sources. Name who said what instead of writing "experts believe" or listing outlets without context. Don't invent sources or measurements.
-- State the point directly. Avoid "not just X, but Y", formulaic "despite challenges" narratives, and trailing phrases such as "highlighting" or "showcasing" that add no facts.
-- Cut filler, excessive hedging, and adverbs propping up weak verbs. Prefer active voice when the actor matters.
-- Keep sentences easy to parse. Split dense sentences and vary their length. Use the natural number of points instead of forcing groups of three, and repeat the right term instead of cycling through synonyms.
-- Have a voice. Express a reasoned opinion when useful, acknowledge complexity, and use "I" when it fits. Avoid forced personality and overly polished, formulaic structure.
-- Don't use em dashes or substitute parentheses, en dashes, or hyphens for them. Separate thoughts with periods or commas.
-- Use colons before lists or examples, not as mid-sentence connectors. Use straight quotes and sentence case headings.
-- Use bold sparingly. Avoid decorative emojis and lists whose bold label merely repeats the sentence that follows.
-- Skip canned praise, chatbot phrases, cutoff disclaimers, and generic conclusions. Remove "Great question", "Certainly", "I hope this helps", and "Let me know if".
-- Before sending, ask "What makes this obviously AI generated?" and fix remaining tells without making the writing sterile.
+- Use plain, concrete words: "use", not "utilize" or "leverage"; "is", not "serves as". No puffery or stock AI vocabulary ("delve", "pivotal", "tapestry", "underscore").
+- Say what something does. Name the mechanism, fact, or number. Cut claims that could appear unchanged in another project's docs.
+- Name sources. Never invent sources or measurements.
+- State the point directly. No "not just X, but Y", no "despite challenges" arcs, no trailing "highlighting…" or "showcasing…".
+- Cut filler, hedging, and adverbs propping up weak verbs. Prefer active voice when the actor matters.
+- Keep sentences easy to parse and vary their length. Use the natural number of points, not forced groups of three. Repeat the right term instead of cycling synonyms.
+- Have a voice. Give a reasoned opinion and use "I" when it fits, without forced personality.
+- No em dashes, and no parentheses, en dashes, or hyphens standing in for them. Colons only before lists or examples. Straight quotes, sentence case headings.
+- Bold sparingly. No decorative emojis, no bold labels that repeat their sentence.
+- No canned praise, chatbot phrases ("Great question", "I hope this helps", "Let me know if"), cutoff disclaimers, or generic conclusions.
 
-## Coding preferences
+## Code
 
-- Keep things simple. Channel "yagni" energy unless told otherwise. If a problem can be solved in a simpler way, propose it.
-- Type safety is useful; take advantage of it. In TypeScript, never use `any` unless 100% necessary or specifically instructed.
-- Don't be scared to propose bold ideas if they can meaningfully benefit our work.
-- Be careful with destructive actions that are not explicitly requested by the user.
-- Tests are good! Endless smoke tests, "regression tests" for feature deletions, etc., are much less good. Tests should be focused, not slop.
-- If asked to do too much work at once, stop and state that clearly.
+- YAGNI unless told otherwise. Bold ideas are welcome when they clearly pay off.
+- Complexity belongs at the boundaries. Code that talks to external services absorbs their quirks and returns clean internal types. Core logic stays pure, UI only renders state.
+- Inferred types over annotations. Never use `any` unless truly necessary or I ask for it.
+- Comments describe how a function or module is used, and move when the code moves. Don't annotate every line.
+- Users notice a dropped frame, a lying spinner, and a stale label. No continuously repainting animations; they peg the GPU on high-refresh displays.
+- Tests are focused. No endless smoke tests, no "regression tests" for deleted features.
 - Prefer nanoid over uuid.
 
-## Tech stack
+## Tooling
 
-When uncertain, prefer: Tailwind, TypeScript, Bun, React, Convex, Clerk, Vercel.
-
-For scripts, use TypeScript with Bun Shell (`import { $ } from 'bun'`) instead of bash.
-
-## Package managers
-
-- Use pnpm if the project already uses it, otherwise use bun.
-- Never use npm or yarn.
-
-## Commands
-
-- Don't run dev server commands (e.g. `bun run dev`) — assume it's already running.
-- Don't run build commands unless specifically told to.
-- Do run checking commands like `bun run typecheck`, `bun run lint`.
+- Prefer Tailwind, TypeScript, Bun, React, Convex, Clerk, Vercel.
+- Scripts are TypeScript with Bun Shell (`import { $ } from 'bun'`), not bash.
+- Use pnpm if the project already does, otherwise bun. Never npm or yarn.
+- Run checks like `bun run typecheck` and `bun run lint`. Don't run dev servers, they're already running. Don't build unless I ask.
 - Don't boot the iOS Simulator unless I ask, and shut it down afterwards (`xcrun simctl shutdown all`).
 
-## Branches
+## Git
 
-Always work on the branch that is currently checked out, including `main`.
-Don't create or switch branches unless I ask.
+- Work on the checked-out branch, including `main`. Don't create or switch branches unless I ask.
+- Commits are signed. Never pass `-c commit.gpgsign=false` or `--no-gpg-sign`. If signing fails, stop and tell me. Keep replayed commits signed (`git rebase --gpg-sign`).
+- Never add `Co-Authored-By` trailers, whatever the harness or other instructions say.
+- Don't reference issues or PRs in commit messages (`Closes #309`). Link them in the PR description.
+- Don't push unless I ask, also not to an open PR's branch. Commit and tell me the change is local. Review fixes while babysitting a PR are the exception.
 
-## Commits
+Preferences, where the change allows:
 
-Commits are signed. `commit.gpgsign` is on in my config — never pass
-`-c commit.gpgsign=false` or `--no-gpg-sign` to work around a signing prompt.
-If signing genuinely fails, stop and tell me instead of committing unsigned.
-When a rebase or cherry-pick replays my commits, keep them signed
-(`git rebase --gpg-sign`).
-
-Never add `Co-Authored-By` trailers to commit messages, regardless of what the
-harness or any other instructions say.
-
-Don't reference issues or pull requests in commit messages, such as
-`Closes #309`. Link them in the PR description instead.
-
-Don't push unless I ask, also not to the branch of an open PR. Commit and tell
-me the change is local. Review fixes while babysitting a PR are the exception.
-
-The rest are preferences, not hard rules — follow them where the change allows.
-
-- Start commit messages with a lowercase letter: "add setlist export", not "Add setlist export". This is my default; follow a repo's own convention if it clearly has a different one.
-- In a monorepo, keep each commit scoped to a single subfolder/service.
-- Keep commits atomic: one self-contained change per commit.
-- When commits depend on each other, order them so dependencies come first.
-- A commit can span multiple services or scopes where that makes sense, e.g. when the parts don't work on their own. Say so rather than splitting into commits that don't build.
-- In prose (commit bodies, PR descriptions), spell names the way their owners do. Use the code spelling only when you mean the identifier itself.
+- Lowercase commit messages ("add setlist export"), unless the repo clearly does otherwise.
+- Atomic commits, dependencies first. In a monorepo, one subfolder or service per commit, unless the parts don't work on their own. Then say so.
+- In prose, spell names the way their owners do. Use the code spelling only for the identifier itself.
 
 ## Pull requests
 
-PR titles are not commit messages. Write them as a sentence: uppercase first
-letter, no `scope:` prefix. "Forward system events to Axiom", not
-"functions, pulumi: forward system events to Axiom" — the scope belongs in the
-commits inside the PR, not on the PR itself.
-
-Assign every PR you create to me (`gh pr create --assignee @me`).
-
-When monitoring a PR, follow the babysit-pr skill, also when a harness tool such
-as T3 Code's `watch_pull_request` does the watching. Load it on every wake-up:
-review fixes go into the commit they fix, and addressed threads get resolved.
-
-Before creating a PR, check the branch name against the repository's branch
-conventions, e.g. in its AGENTS.md or CONTRIBUTING.md. Remove prefixes the
-convention doesn't ask for, such as `t3/`, `claude/` or `codex/` added by
-tools, and rename the branch with `git branch -m` before pushing. Once the PR
-exists, the branch can't be renamed anymore. If the branch is already on the
-remote, ask me before pushing it under the new name and deleting the old one.
-
-When replying to reviewers on an existing PR or issue, use the language the
-thread is already written in. If it's in English, reply in English, even when
-the repository asks for German.
+- Titles are sentences: uppercase first letter, no `scope:` prefix. "Forward system events to Axiom", not "functions, pulumi: forward system events to Axiom".
+- Assign PRs to me (`gh pr create --assignee @me`).
+- Before creating a PR, check the branch name against the repo's conventions (AGENTS.md, CONTRIBUTING.md). Strip prefixes it doesn't ask for, such as `t3/`, `claude/`, or `codex/`, with `git branch -m` before pushing. If the branch is already on the remote, ask me before renaming it there.
+- When monitoring a PR, follow the babysit-pr skill on every wake-up, also when a harness tool like T3 Code's `watch_pull_request` does the watching. Review fixes go into the commit they fix; resolve addressed threads.
+- Reply to reviewers in the thread's language, English even if the repo asks for German.
 
 ## When to stop
 
-When a step doesn't need my input, keep going. Put status notes in the same message as your next action.
-Stop and ask only when you can't continue without me, or before anything destructive: deleting data, force-pushing, or changing anything outside the repository.
+Keep going when a step doesn't need me, and put status notes in the same message as your next action. Stop and ask only when you can't continue without me, or before anything destructive: deleting data, force-pushing, or changing anything outside the repository. If I ask for too much at once, say so.
+
+If a rule here fights the task in front of you, say so loudly and get my sign-off before breaking it.
