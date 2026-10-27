@@ -1,0 +1,8 @@
+{
+  "theme": "auto",
+  "tui": "fullscreen",
+  "permissions": { "defaultMode": "auto" },
+  "skipDangerousModePermissionPrompt": true,
+  "syncClaudeAiSkills": false,
+  "autoMemoryEnabled": false
+}

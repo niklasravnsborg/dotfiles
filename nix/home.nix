@@ -127,6 +127,7 @@ in
     ".config/starship.toml" = dotfile "starship/starship.toml";
 
     ".claude/CLAUDE.md" = dotfile "claude/CLAUDE.md";
+    ".claude/settings.json" = dotfile "claude/settings.json";
     ".claude/skills/" = dotfile ".agents/skills/";
 
     # Posting
