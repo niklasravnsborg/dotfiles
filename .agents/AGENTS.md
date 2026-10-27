@@ -45,6 +45,7 @@ For scripts, use TypeScript with Bun Shell (`import { $ } from 'bun'`) instead o
 - Don't run dev server commands (e.g. `bun run dev`) — assume it's already running.
 - Don't run build commands unless specifically told to.
 - Do run checking commands like `bun run typecheck`, `bun run lint`.
+- Don't boot the iOS Simulator unless I ask, and shut it down afterwards (`xcrun simctl shutdown all`).
 
 ## Branches
 
@@ -64,6 +65,9 @@ harness or any other instructions say.
 
 Don't reference issues or pull requests in commit messages, such as
 `Closes #309`. Link them in the PR description instead.
+
+Don't push unless I ask, also not to the branch of an open PR. Commit and tell
+me the change is local. Review fixes while babysitting a PR are the exception.
 
 The rest are preferences, not hard rules — follow them where the change allows.
 
