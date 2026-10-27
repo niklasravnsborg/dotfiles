@@ -62,6 +62,9 @@ When a rebase or cherry-pick replays my commits, keep them signed
 Never add `Co-Authored-By` trailers to commit messages, regardless of what the
 harness or any other instructions say.
 
+Don't reference issues or pull requests in commit messages, such as
+`Closes #309`. Link them in the PR description instead.
+
 The rest are preferences, not hard rules — follow them where the change allows.
 
 - Start commit messages with a lowercase letter: "add setlist export", not "Add setlist export". This is my default; follow a repo's own convention if it clearly has a different one.
@@ -90,6 +93,10 @@ convention doesn't ask for, such as `t3/`, `claude/` or `codex/` added by
 tools, and rename the branch with `git branch -m` before pushing. Once the PR
 exists, the branch can't be renamed anymore. If the branch is already on the
 remote, ask me before pushing it under the new name and deleting the old one.
+
+When replying to reviewers on an existing PR or issue, use the language the
+thread is already written in. If it's in English, reply in English, even when
+the repository asks for German.
 
 ## When to stop
 
