@@ -5,7 +5,7 @@ description: Explore a codebase to find opportunities for architectural improvem
 
 # Improve Codebase Architecture
 
-Explore a codebase like an AI would, surface architectural friction, discover opportunities for improving testability, and propose module-deepening refactors as GitHub issue RFCs.
+Explore a codebase like an AI would, surface architectural friction, discover opportunities for improving testability, and propose module-deepening refactors as GitHub issues.
 
 A **deep module** (John Ousterhout, "A Philosophy of Software Design") has a small interface hiding a large implementation. Deep modules are more testable, more AI-navigable, and let you test at the boundary instead of inside.
 
@@ -46,9 +46,11 @@ Before spawning sub-agents, write a user-facing explanation of the problem space
 
 Show this to the user, then immediately proceed to Step 5. The user reads and thinks about the problem while the sub-agents work in parallel.
 
-### 5. Design multiple interfaces
+### 5. Design the interface
 
-Spawn 3+ sub-agents in parallel using the Agent tool. Each must produce a **radically different** interface for the deepened module.
+For a small or clear-cut candidate, propose one interface yourself and skip to step 6.
+
+For a big or unclear one, spawn 3+ sub-agents in parallel using the Agent tool. Each must produce a **radically different** interface for the deepened module.
 
 Prompt each sub-agent with a separate technical brief (file paths, coupling details, dependency category, what's being hidden). This brief is independent of the user-facing explanation in Step 4. Give each agent a different design constraint:
 
@@ -73,4 +75,4 @@ After comparing, give your own recommendation: which design you think is stronge
 
 ### 7. Create GitHub issue
 
-Create a refactor RFC as a GitHub issue using `gh issue create`. Use the template in [REFERENCE.md](REFERENCE.md). Do NOT ask the user to review before creating — just create it and share the URL.
+Write the issue with the write-an-issue skill. Include its Interface and Testing sections, and name the dependency category in the Decision.
