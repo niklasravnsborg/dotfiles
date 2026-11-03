@@ -29,10 +29,3 @@ This is my personal dotfiles repository. It is managed with [Nix](https://nixos.
 Generate new keyfile: `ssh-keygen -t ed25519 -C "niklasravnsborg@gmail.com"`  
 Change password: `ssh-keygen -p -f ~/.ssh/id_ed25519`  
 Add password to keychain: `ssh-add --apple-use-keychain ~/.ssh/id_ed25519`
-
-## Connect with public network
-
-- Deactivate NextDNS: `nextdns deactivate`
-- Connect to network
-- Clear DNS cache: `sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder`
-- Reactivate NextDNS: `nextdns activate`

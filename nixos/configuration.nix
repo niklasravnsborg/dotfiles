@@ -3,7 +3,6 @@
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
 {
-  lib,
   pkgs,
   secretsPath,
   config,
@@ -83,18 +82,6 @@
     # Disable automatic key generation
     age.sshKeyPaths = [ ];
     gnupg.sshKeyPaths = [ ];
-
-    secrets = {
-      nextdns-config = { };
-    };
-  };
-
-  services.nextdns.enable = true;
-  systemd.services.nextdns = {
-    serviceConfig = {
-      ExecStart = lib.mkForce "${pkgs.nextdns}/bin/nextdns run --auto-activate=true --config-file=${config.sops.secrets.nextdns-config.path}";
-    };
-    after = [ "sops-install-secrets.target" ];
   };
 
   # Enable OpenSSH daemon

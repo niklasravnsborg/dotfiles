@@ -1,12 +1,8 @@
 {
   pkgs,
-  lib,
-  config,
   secretsPath,
   ...
 }:
-
-with lib;
 
 let
   home = "/Users/nik";
@@ -27,77 +23,6 @@ in
     # Disable automatic key generation
     age.sshKeyPaths = [ ];
     gnupg.sshKeyPaths = [ ];
-
-    secrets = {
-      nextdns-config = { };
-    };
-  };
-
-  services.tailscale = {
-    enable = true;
-  };
-
-  services.nextdns.enable = true;
-  # Manually start and stop the nextdns service with:
-  # `sudo launchctl bootout system /Library/LaunchDaemons/org.nixos.nextdns.plist`
-  # `sudo launchctl bootstrap system /Library/LaunchDaemons/org.nixos.nextdns.plist`
-  launchd.daemons.nextdns = {
-    # Uncomment to enable logging
-    # serviceConfig.StandardErrorPath = "/var/log/nextdns.log";
-    # serviceConfig.StandardOutPath = "/var/log/nextdns.log";
-    command = mkForce (
-      toString (
-        pkgs.writeShellScript "nextdns-config-watch" ''
-          trap 'kill $(jobs -p); exit' SIGINT
-
-          # `nextdns activate` depends on `launchctl` and `networksetup`
-          export PATH="/usr/bin:/bin:/usr/sbin:/sbin"
-
-          # Make sure nextdns is activated
-          ${pkgs.nextdns}/bin/nextdns activate
-
-          while true; do
-            # Start long-running nextdns process in the background
-            ${pkgs.nextdns}/bin/nextdns run --config-file=${config.sops.secrets.nextdns-config.path} &
-            nextdns_pid=$!
-
-            # If the tmpfs is not yet mounted, the file watchers won't trigger on change
-            # wait4path will exit when the path is mounted
-            if ! [ -d /run/secrets.d/ ]; then
-              echo "Secrets volume not yet mounted. This script will restart when it is."
-              /bin/wait4path /run/secrets.d/ &
-            elif ! [ -e /run/secrets/ ]; then
-              echo "Secrets not yet created. Restart the script."
-              exit &
-            else
-              # Monitor symlink and config file in background
-              # fswatch will exit when those paths are modified
-              ${pkgs.fswatch}/bin/fswatch -1 ${config.sops.secrets.nextdns-config.path} > /dev/null &
-            fi
-
-            # Wait for at least one process to exit
-            wait -n
-            exit_code=$?
-
-            # Check if the nextdns process has exited
-            if ! /bin/ps -p $nextdns_pid > /dev/null; then
-              echo "Process has exited with code $exit_code. Exiting script."
-              exit $exit_code
-            fi
-
-            # Kill all other running processes
-            echo "A monitored file was changed. Restarting."
-            pids=$(jobs -p)
-            kill $pids 2> /dev/null
-            wait $pids
-
-            # Before restarting the loop, let's sleep for 100 ms
-            echo "Restarting in 100 ms..."
-            /bin/sleep 0.1
-          done
-        ''
-      )
-    );
   };
 
   # Create sourcings for zsh and fish
@@ -336,6 +261,7 @@ in
       "proxyman" # HTTP debugging proxy
       "t3-code" # Agent control plane
       "tableplus" # Native GUI tool for relational databases
+      "tailscale-app" # Private mesh network
       "tuple" # Remote pair programming app
       "visual-studio-code" # Open-source code editor
       "wireshark-app" # Network protocol analyzer

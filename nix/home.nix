@@ -20,7 +20,6 @@ let
         "sudo nixos-rebuild switch --flake ~/dotfiles";
     oc = "opencode";
     svgo = "svgo --config=$HOME/.svgo.config.js";
-    wifi = "nextdns deactivate; open http://neverssl.com; read -P 'Continue? '; nextdns activate";
     ffmpeg = "ffmpeg -hide_banner";
     cat = "bat -p";
 
