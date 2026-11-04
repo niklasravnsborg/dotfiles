@@ -35,5 +35,9 @@ export default {
       match: "www.figma.com/file/*",
       browser: "Figma",
     },
+    {
+      match: "app.t3.codes/threads/*",
+      browser: "com.t3tools.t3code",
+    },
   ],
 } satisfies FinickyConfig;
