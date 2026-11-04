@@ -9,15 +9,11 @@ end
 # Set PATH and environment
 # If TERM_PROGRAM is not tmux, since tmux will already have sourced the environment
 if test -z "$TMUX" -a "$TERM_PROGRAM" != tmux
-    source ~/dotfiles/fish/env.fish
+    source (status dirname)/env.fish
 end
 
 # Add correct new lines for starship prompt
 _spaced_prompts
-
-# Init Atuin
-ATUIN_NOBIND=true atuin init fish | source
-bind \ca _atuin_search
 
 # Config any-nix-shell
 any-nix-shell fish | source
@@ -30,5 +26,3 @@ function ya
     end
     rm -f -- "$tmp"
 end
-
-eval "$(micromamba shell hook --shell fish)"

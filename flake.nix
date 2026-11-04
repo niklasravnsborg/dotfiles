@@ -54,11 +54,9 @@
       secretsPath = toString inputs.dotfiles-secrets;
       homeManagerConfig = {
         useGlobalPkgs = true;
-        users.nik = import ./nix/home.nix;
+        users.nik = import ./nix/home/workstation.nix;
         sharedModules = [
           inputs.sops-nix.homeManagerModules.sops
-          ./tmux/tmux-module.nix
-
         ];
         extraSpecialArgs = {
           inherit secretsPath;
@@ -120,6 +118,9 @@
 
     in
     {
+      # Shell, prompt and CLI tools for other flakes, see nix/home/base.nix
+      homeModules.base = ./nix/home/base.nix;
+
       # for `nix fmt`
       formatter = eachSystem (pkgs: treefmtEval.${pkgs.stdenv.hostPlatform.system}.config.build.wrapper);
 

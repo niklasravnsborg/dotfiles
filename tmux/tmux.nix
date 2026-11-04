@@ -1,4 +1,4 @@
-{ pkgs, configDir, ... }:
+{ pkgs, dotfilePath, ... }:
 {
   programs.my-tmux = {
     enable = true;
@@ -8,7 +8,7 @@
       set -g default-command ${pkgs.fish}/bin/fish
 
       # Include my configuration
-      source-file ${configDir}/tmux/custom.conf
+      source-file ${dotfilePath "tmux/custom.conf"}
     '';
     plugins = with pkgs; [
       tmuxPlugins.sensible
