@@ -202,10 +202,10 @@ in
       "yubico-authenticator" # Application for configuring YubiKeys
 
       # Web browser
-      "arc" # Chromium based browser
       "finicky" # Utility for customizing which browser to start
       "firefox" # Web browser
       "helium-browser" # Chromium based browser
+      "thebrowsercompany-dia" # Chromium based browser
       "ungoogled-chromium" # Chromium based browser with privacy in mind
 
       # Graphic & Image Applications

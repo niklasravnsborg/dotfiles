@@ -4,7 +4,7 @@
 import type { FinickyConfig } from "/Applications/Finicky.app/Contents/Resources/finicky.d.ts";
 
 export default {
-  defaultBrowser: "Arc",
+  defaultBrowser: "Dia",
   options: {
     checkForUpdates: false,
     hideIcon: true,
@@ -13,7 +13,7 @@ export default {
   handlers: [
     {
       match: "meet.google.com/*",
-      browser: "Arc",
+      browser: "Dia",
     },
     {
       match: "open.spotify.com/*",
