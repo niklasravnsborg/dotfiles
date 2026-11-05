@@ -52,16 +52,20 @@
           config.allowUnfree = true;
         };
       secretsPath = toString inputs.dotfiles-secrets;
-      homeManagerConfig = {
-        useGlobalPkgs = true;
-        users.nik = import ./nix/home/workstation.nix;
-        sharedModules = [
+      # Full home config with secrets, for machines I work on
+      workstationModule = {
+        imports = [
+          ./nix/home/workstation.nix
           inputs.sops-nix.homeManagerModules.sops
         ];
-        extraSpecialArgs = {
+        _module.args = {
           inherit secretsPath;
           llmAgents = inputs.llm-agents;
         };
+      };
+      homeManagerConfig = {
+        useGlobalPkgs = true;
+        users.nik = workstationModule;
       };
       darwinSystem = inputs.nix-darwin.lib.darwinSystem {
         system = systems.darwin;
@@ -77,9 +81,7 @@
           inputs.nix-homebrew.darwinModules.nix-homebrew
           {
             home-manager = homeManagerConfig // {
-              sharedModules = homeManagerConfig.sharedModules ++ [
-                ./macos/file-associations
-              ];
+              sharedModules = [ ./macos/file-associations ];
             };
             nix-homebrew = {
               enable = true;
@@ -120,6 +122,13 @@
     {
       # Shell, prompt and CLI tools for other flakes, see nix/home/base.nix
       homeModules.base = ./nix/home/base.nix;
+
+      # Everything above plus AI tools and secrets, for other flakes, e.g. a VM:
+      #
+      #   home-manager.users.nik.imports = [ dotfiles.homeModules.workstation ];
+      #
+      # Needs an age key at ~/.config/sops/age/keys.txt that is listed in dotfiles-secrets.
+      homeModules.workstation = workstationModule;
 
       # for `nix fmt`
       formatter = eachSystem (pkgs: treefmtEval.${pkgs.stdenv.hostPlatform.system}.config.build.wrapper);
