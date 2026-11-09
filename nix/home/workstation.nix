@@ -116,10 +116,10 @@ in
     ".config/yazi/theme.toml" = dotfile "yazi/theme.toml";
     ".config/yazi/yazi.toml" = dotfile "yazi/yazi.toml";
     ".config/yazi/keymap.toml" = dotfile "yazi/keymap.toml";
-
+  }
+  // lib.optionalAttrs pkgs.stdenv.hostPlatform.isDarwin {
     # Ableset
-    "/Users/nik/Library/Application Support/ableset/custom-styles/styles.css" =
-      dotfile "ableset/styles.css";
+    "Library/Application Support/ableset/custom-styles/styles.css" = dotfile "ableset/styles.css";
   };
 
   sops = {
