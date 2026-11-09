@@ -54,10 +54,10 @@
     "dotfiles-secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1741440266,
-        "narHash": "sha256-n8OxfMWJ9q6AvjTDZhkKUqhXbAiKYtnaReS59/9ScI4=",
+        "lastModified": 1794215289,
+        "narHash": "sha256-E8wjsvpi0UVVt3/reejzLOOeZlmqDOxeXPNBfZJFMm4=",
         "ref": "refs/heads/main",
-        "rev": "543ec105705fd49a4f2b300507a89ed0035036dd",
+        "rev": "e592be89dc88d474ff25fc14b43df289c59fe617",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@github.com/niklasravnsborg/dotfiles-secrets"
