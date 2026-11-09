@@ -33,3 +33,6 @@
 	pager = less --mouse
 [interactive]
 	diffFilter = delta --color-only
+[include]
+	# Machine-specific overrides
+	path = ~/.gitconfig.local
