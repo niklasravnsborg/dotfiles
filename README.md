@@ -12,7 +12,7 @@ This is my personal dotfiles repository. It is managed with [Nix](https://nixos.
 
 - Setup Dropbox
 - Import GPG Key with `gpg --import Secret.asc`
-- Log in to Atuin sync with `atuin login -u (cat ~/.config/sops-nix/secrets/atuin/username) -p (cat ~/.config/sops-nix/secrets/atuin/password)`
+- Log in to Atuin sync with `atuin login -u (cat ~/.config/sops-nix/secrets/atuin/username) -p (cat ~/.config/sops-nix/secrets/atuin/password) -k (cat ~/.config/sops-nix/secrets/atuin/key)`
 - Import uBlock setting via the import features in browser
 - Import TablePlus Connections
 - Import Timemator History from `~/Application Support/com.catforce.timemator.macos`
