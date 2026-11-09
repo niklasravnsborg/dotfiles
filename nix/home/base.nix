@@ -226,6 +226,9 @@ in
           showCommandLog = false;
           showBottomLine = true;
           theme = {
+            authorColors = {
+              "*" = "#b7bdf8";
+            };
             activeBorderColor = [
               "#ee99a0"
               "bold"
@@ -238,9 +241,6 @@ in
             unstagedChangesColor = [ "#ed8796" ];
             defaultFgColor = [ "#cad3f5" ];
             searchingActiveBorderColor = [ "#eed49f" ];
-          };
-          authorColors = {
-            "*" = "#b7bdf8";
           };
         };
         update = {
