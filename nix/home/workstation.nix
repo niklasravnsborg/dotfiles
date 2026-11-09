@@ -133,20 +133,7 @@ in
     };
   };
 
-  home.activation = {
-    atuinLogin = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-      if [ -e ${homePath}/.local/share/atuin/session ]; then
-        echo "Atuin session exists already"
-      else
-        echo "Logging in to Atuin server"
-        echo | ${pkgs.atuin}/bin/atuin login \
-          -u $(cat ${config.sops.secrets."atuin/username".path}) \
-          -p $(cat ${config.sops.secrets."atuin/password".path})
-      fi
-    '';
-
-  }
-  // lib.optionalAttrs pkgs.stdenv.hostPlatform.isDarwin {
+  home.activation = lib.optionalAttrs pkgs.stdenv.hostPlatform.isDarwin {
     copyKeyboardLayout = ''
       mkdir -p ~/Library/Keyboard\ Layouts/
       cp -R ${dotfilePath "macos/niklas.keylayout"} ~/Library/Keyboard\ Layouts/
