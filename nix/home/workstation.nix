@@ -131,6 +131,10 @@ in
       "atuin/key" = {
         path = "${homePath}/.local/share/atuin/key";
       };
+      # Read by Claude Code's apiKeyHelper, see claude/settings.json
+      "cli-proxy-api/key" = {
+        path = "${homePath}/.config/cli-proxy-api/key";
+      };
     };
   };
 
