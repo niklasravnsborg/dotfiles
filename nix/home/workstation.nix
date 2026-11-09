@@ -22,6 +22,31 @@ let
         --prefix PATH : ${lib.makeBinPath [ pkgs.nodejs ]}
     '';
   };
+  # Routes Codex through CLIProxyAPI. ~/.codex/config.toml is written by Codex itself,
+  # so the provider comes in as -c flags, which ~/.codex/config.toml can't override.
+  cliProxyKey = config.sops.secrets."cli-proxy-api/key".path;
+  codex = pkgs.symlinkJoin {
+    name = "codex-cli-proxy";
+    paths = [ llmAgentPackages.codex ];
+    nativeBuildInputs = [ pkgs.makeWrapper ];
+    postBuild = ''
+      wrapProgram $out/bin/codex ${
+        lib.escapeShellArgs (
+          lib.concatMap
+            (flag: [
+              "--add-flag"
+              flag
+            ])
+            [
+              "-c"
+              "model_provider=cli-proxy"
+              "-c"
+              ''model_providers.cli-proxy={name="CLIProxyAPI", base_url="https://cli-proxy.tail7b070d.ts.net/v1", wire_api="responses", auth={command="${pkgs.coreutils}/bin/cat", args=["${cliProxyKey}"]}}''
+            ]
+        )
+      }
+    '';
+  };
 in
 {
   imports = [ ./base.nix ];
@@ -68,7 +93,7 @@ in
     # AI Tools
     claudeCode
     llmAgentPackages.clauth
-    llmAgentPackages.codex
+    codex
     llmAgentPackages.opencode
 
     # Fun
@@ -131,7 +156,7 @@ in
       "atuin/key" = {
         path = "${homePath}/.local/share/atuin/key";
       };
-      # Read by Claude Code's apiKeyHelper, see claude/settings.json
+      # Read by Claude Code's apiKeyHelper in claude/settings.json and by the Codex wrapper above
       "cli-proxy-api/key" = {
         path = "${homePath}/.config/cli-proxy-api/key";
       };
