@@ -103,6 +103,7 @@
             nixpkgs.config.allowUnfree = true;
             home-manager = homeManagerConfig // {
               useUserPackages = true;
+              sharedModules = [ ./nixos/gnome.nix ];
             };
           }
         ];
