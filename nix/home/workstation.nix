@@ -134,7 +134,17 @@ in
     };
   };
 
-  home.activation = lib.optionalAttrs pkgs.stdenv.hostPlatform.isDarwin {
+  home.activation = {
+    # Skip Claude Code's first-run setup. ~/.claude.json is written by Claude Code itself, so only set the flag.
+    claudeOnboarding = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+      f=${homePath}/.claude.json
+      [ -e "$f" ] || echo '{}' > "$f"
+      if ! ${pkgs.jq}/bin/jq -e '.hasCompletedOnboarding' "$f" > /dev/null; then
+        ${pkgs.jq}/bin/jq '.hasCompletedOnboarding = true' "$f" > "$f.tmp" && mv "$f.tmp" "$f"
+      fi
+    '';
+  }
+  // lib.optionalAttrs pkgs.stdenv.hostPlatform.isDarwin {
     copyKeyboardLayout = ''
       mkdir -p ~/Library/Keyboard\ Layouts/
       cp -R ${dotfilePath "macos/niklas.keylayout"} ~/Library/Keyboard\ Layouts/
