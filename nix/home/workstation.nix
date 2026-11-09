@@ -56,6 +56,7 @@ in
     gitui # Terminal ui for git
     httpie # User-friendly HTTP client
     imagemagick # Manipulate images in many formats
+    just # Command runner for project tasks
     micromamba # Environment manager
     ngrok # Reverse proxy, secure tunnels to localhost
     svgo # Optimize SVGs
