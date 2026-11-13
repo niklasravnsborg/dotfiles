@@ -25,6 +25,9 @@ This covers issue bodies, issue comments, PR comments, replies to review
 threads and review bodies. Anything a human reads as Niklas speaking needs the
 line. Commit messages and PR descriptions carry their own attribution.
 
+An "I" in a post is Niklas. Only give judgments he stated or agreed to in
+the conversation; ask him when the post needs one he hasn't given.
+
 Say the thing and stop. A post earns its place by carrying a reason, a commit
 SHA, a file reference or a screenshot. Acknowledging, agreeing or restating
 what the diff already shows adds nothing. When you dismiss a finding, give the

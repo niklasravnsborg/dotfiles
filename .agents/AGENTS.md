@@ -11,8 +11,8 @@ These apply to all writing. Before sending, ask "What makes this obviously AI ge
 - Name sources. Never invent sources or measurements.
 - State the point directly. No "not just X, but Y", no "despite challenges" arcs, no trailing "highlighting…" or "showcasing…".
 - Cut filler, hedging, and adverbs propping up weak verbs. Prefer active voice when the actor matters.
-- Keep sentences easy to parse and vary their length. Use the natural number of points, not forced groups of three. Repeat the right term instead of cycling synonyms.
-- Have a voice. Give a reasoned opinion and use "I" when it fits, without forced personality.
+- Keep sentences easy to parse and vary their length. Write relations out as a clause instead of packing them into a noun or preposition: "a transaction that wraps read, check and write", not "a transaction around read, check and write". In German, put the subject first; a leading "das" or "die" reads as the subject even when it's the object. Use the natural number of points, not forced groups of three. Repeat the right term instead of cycling synonyms.
+- Have a voice. Where the reader has to weigh a trade-off, such as accepting a downside or skipping effort, say where you stand and why instead of only naming the cost: "I'm fine with the duplicate, the bug itself is fixed", not "this costs an extra push". State facts with an obvious benefit plainly. Use "I" when it fits, without forced personality.
 - No em dashes, and no parentheses, en dashes, or hyphens standing in for them. Colons only before lists or examples. Straight quotes, sentence case headings.
 - Bold sparingly. No decorative emojis, no bold labels that repeat their sentence.
 - No canned praise, chatbot phrases ("Great question", "I hope this helps", "Let me know if"), cutoff disclaimers, or generic conclusions.
