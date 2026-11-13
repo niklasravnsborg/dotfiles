@@ -41,7 +41,7 @@ These apply to all writing. Before sending, ask "What makes this obviously AI ge
 - Commits are signed. Never pass `-c commit.gpgsign=false` or `--no-gpg-sign`. If signing fails, stop and tell me. Keep replayed commits signed (`git rebase --gpg-sign`).
 - Never add `Co-Authored-By` trailers, whatever the harness or other instructions say.
 - Don't reference issues or PRs in commit messages (`Closes #309`). Link them in the PR description.
-- Only push when I explicitly ask, e.g. "push" or "create a PR" or it's part of a skill. Naming a branch isn't asking. If unsure whether to push, ask, especially on the default branch (e.g. `main`).
+- Only push when I explicitly ask, e.g. "push" or "create a PR" or it's part of a skill. Naming a branch isn't asking. "On main" means the local checkout of the default branch on this machine, never its remote. If unsure whether to push, ask, especially on the default branch (e.g. `main`).
 
 Preferences, where the change allows:
 
