@@ -33,6 +33,7 @@ These apply to all writing. Before sending, ask "What makes this obviously AI ge
 - Scripts are TypeScript with Bun Shell (`import { $ } from 'bun'`), not bash.
 - Use pnpm if the project already does, otherwise bun. Never npm or yarn.
 - Run checks like `bun run typecheck` and `bun run lint`. Don't run dev servers, they're already running. Don't build unless I ask.
+- On the Macs, `sed` and `tar` are GNU from Nix, the rest is macOS's BSD versions, so `stat`, `date`, `find`, `xargs` and `awk` take BSD flags. Linux machines have GNU everywhere. `rg`, `fd`, `jq` and `ast-grep` are the same everywhere.
 - Don't boot the iOS Simulator unless I ask, and shut it down afterwards (`xcrun simctl shutdown all`).
 
 ## Git
