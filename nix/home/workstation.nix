@@ -73,6 +73,7 @@ in
   home.packages = with pkgs; [
     act # Run GitHub Actions locally
     age # Secure file encryption
+    ast-grep # Search and rewrite code by syntax tree
     atuin # Universal history
     bun # Incredibly fast JavaScript runtime
     cloc # Count lines of code

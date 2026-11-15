@@ -55,7 +55,9 @@ in
       gnutar # GNU version of the tar archiving utility
       helix # Post-modern modal text editor
       htop # Improved top (interactive process viewer)
+      jq # Command-line JSON processor
       less # Pager program
+      ripgrep # Fast grep that skips gitignored files
       tlrc # client for tldr: collaborative cheatsheets for console commands
       tree # Display directories as trees
       watch # Execute a program periodically
