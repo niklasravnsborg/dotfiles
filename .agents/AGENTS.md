@@ -46,7 +46,7 @@ These apply to all writing. Before sending, ask "What makes this obviously AI ge
 
 Preferences, where the change allows:
 
-- Lowercase commit messages ("add setlist export"), unless the repo clearly does otherwise.
+- Lowercase commit messages unless the repo clearly does otherwise. Names keep their capitals: "route Codex through CLIProxyAPI".
 - Atomic commits, dependencies first. In a monorepo, one subfolder or service per commit, unless the parts don't work on their own. Then say so.
 - In prose, spell names the way their owners do. Use the code spelling only for the identifier itself.
 
