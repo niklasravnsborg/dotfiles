@@ -69,6 +69,23 @@ in
       ".config/helix/config.toml" = dotfile "helix/config.toml";
       ".config/helix/themes/my_theme.toml" = dotfile "helix/my_theme.toml";
       ".config/starship.toml" = dotfile "starship/starship.toml";
+      ".config/yazi/theme.toml" = dotfile "yazi/theme.toml";
+      ".config/yazi/yazi.toml" = dotfile "yazi/yazi.toml";
+      ".config/yazi/keymap.toml" = dotfile "yazi/keymap.toml";
+    };
+
+    programs.yazi = {
+      enable = true;
+      plugins = {
+        inherit (pkgs.yaziPlugins)
+          full-border
+          starship
+          ;
+      };
+      initLua = ''
+        require("full-border"):setup()
+        require("starship"):setup()
+      '';
     };
 
     # This sets the `XDG_CONFIG_HOME` environment variable to `~/.config`.
