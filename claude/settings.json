@@ -16,5 +16,9 @@
     "claude-opus-5-5": {
       "effortLevel": "medium"
     }
+  },
+  "attribution": {
+    "commit": "",
+    "pr": ""
   }
 }
