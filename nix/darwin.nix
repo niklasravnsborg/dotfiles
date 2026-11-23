@@ -173,8 +173,6 @@ in
       "beeper" # Universal chat app
       # "bitwarden" # Desktop password and login vault -> Install from App Store to disable auto updates
       "calibre" # E-books management software
-      "chatgpt" # ChatGPT macOS app
-      "chatwise" # AI chat app
       "deskpad" # A virtual monitor for screen sharing
       "dropbox" # Client for the Dropbox cloud storage service
       "iina" # Multimedia player
@@ -183,8 +181,8 @@ in
       "macfuse" # File system integration
       "macshot" # Utility for taking screenshots
       "monitorcontrol" # Utility to control external monitors
+      "niklasravnsborg/tap/hidenotch" # Utility to hide the notch
       "numi" # Calculator and converter application
-      "opensuperwhisper" # Whisper client for macOS
       "phoenix" # Window and app manager scriptable with JavaScript
       "protonvpn" # VPN client focusing on security
       "qlmarkdown" # Quick Look generator for Markdown files
@@ -198,8 +196,13 @@ in
       "telegram" # Messaging app with a focus on speed and security
       "the-unarchiver" # Unpacks archive files
       "timemator" # Automatic time-tracking application
-      "topnotch" # Utility to hide the notch
       "yubico-authenticator" # Application for configuring YubiKeys
+
+      # AI Apps
+      "chatgpt" # ChatGPT macOS app
+      "chatwise" # AI chat app
+      "claude" # Claude macOS app
+      "opensuperwhisper" # Whisper client for macOS
 
       # Web browser
       "finicky" # Utility for customizing which browser to start
