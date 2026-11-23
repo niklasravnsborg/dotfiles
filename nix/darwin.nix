@@ -210,6 +210,7 @@ in
       "helium-browser" # Chromium based browser
       "thebrowsercompany-dia" # Chromium based browser
       "ungoogled-chromium" # Chromium based browser with privacy in mind
+      "yetanotherbrowser/tap/yab" # WebKit browser for people and agents
 
       # Graphic & Image Applications
       "affinity" # Image editing and design software
