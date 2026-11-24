@@ -236,6 +236,9 @@ in
       if pkgs.stdenv.hostPlatform.isDarwin then pkgs.pinentry_mac else pkgs.pinentry-curses;
   };
 
+  # Git worktree manager for parallel agents (wt)
+  programs.worktrunk.enable = true;
+
   # GitHub command-line tool
   programs.gh = {
     enable = true;
