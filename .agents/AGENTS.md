@@ -55,6 +55,7 @@ Preferences, where the change allows:
 - Titles are sentences: uppercase first letter, no `scope:` prefix. "Forward system events to Axiom", not "functions, pulumi: forward system events to Axiom".
 - Descriptions are short: one or two sentences on what changes, then one line per change that a reviewer or operator should know about. Leave out the backstory, the mechanism and anything the diff or the commits already explain.
 - Assign PRs to me (`gh pr create --assignee @me`).
+- A PR that builds on another PR goes into a GitHub stack, see the stacked-prs skill.
 - Before creating a PR, check the branch name against the repo's conventions (AGENTS.md, CONTRIBUTING.md). Strip prefixes it doesn't ask for, such as `t3/`, `claude/`, or `codex/`, with `git branch -m` before pushing. If the branch is already on the remote, ask me before renaming it there.
 - When monitoring a PR, follow the babysit-pr skill on every wake-up, also when a harness tool like T3 Code's `watch_pull_request` does the watching. Review fixes go into the commit they fix; resolve addressed threads.
 - Reply to reviewers in the thread's language, English even if the repo asks for German.
