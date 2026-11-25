@@ -63,4 +63,6 @@ Preferences, where the change allows:
 
 Keep going when a step doesn't need me, and put status notes in the same message as your next action. Stop and ask only when you can't continue without me, or before anything destructive: deleting data, force-pushing, or changing anything outside the repository. If I ask for too much at once, say so.
 
+When you hand back, end with a short list of the next steps you'd suggest, such as follow-up work, a check only I can do, or a decision that's still open. Make each step concrete enough to act on. Skip the list for quick answers or when nothing sensible is left.
+
 If a rule here fights the task in front of you, say so loudly and get my sign-off before breaking it.
