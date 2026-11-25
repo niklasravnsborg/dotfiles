@@ -171,23 +171,19 @@ in
       # Applications
       "adobe-digital-editions" # E-book verifier and reader
       "beeper" # Universal chat app
-      # "bitwarden" # Desktop password and login vault -> Install from App Store to disable auto updates
       "calibre" # E-books management software
       "deskpad" # A virtual monitor for screen sharing
       "dropbox" # Client for the Dropbox cloud storage service
       "iina" # Multimedia player
       "karabiner-elements" # Keyboard customizer
       "legcord" # Discord client
-      "macfuse" # File system integration
       "macshot" # Utility for taking screenshots
       "monitorcontrol" # Utility to control external monitors
       "niklasravnsborg/tap/hidenotch" # Utility to hide the notch
       "numi" # Calculator and converter application
       "phoenix" # Window and app manager scriptable with JavaScript
       "protonvpn" # VPN client focusing on security
-      "qlmarkdown" # Quick Look generator for Markdown files
       "raycast" # Control your tools with a few keystrokes
-      "rwts-pdfwriter" # Print driver for printing documents directly to a pdf file
       "scroll-reverser" # Set mouse scroll directions independently
       "signal" # Instant messaging application focusing on security
       "space-rabbit" # Remove animations when switching macOS Spaces
@@ -197,6 +193,12 @@ in
       "the-unarchiver" # Unpacks archive files
       "timemator" # Automatic time-tracking application
       "yubico-authenticator" # Application for configuring YubiKeys
+
+      # Extensions
+      "macfuse" # File system integration
+      "qlmarkdown" # Quick Look extension for Markdown files
+      "rwts-pdfwriter" # Print driver for printing documents directly to a pdf file
+      "syntax-highlight" # Quick Look extension for Code files
 
       # AI Apps
       "chatgpt" # ChatGPT macOS app
