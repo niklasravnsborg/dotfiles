@@ -251,6 +251,8 @@ in
     extensions = [
       # Inline PR review comments: list, reply to and resolve review threads
       pkgs.gh-pr-review
+      # Stacked PRs: link dependent PRs, rebase and push the layers
+      pkgs.gh-stack
     ];
   };
 }
