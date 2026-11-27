@@ -4,7 +4,7 @@
 brew cleanup --prune=all
 
 # Nix
-nix-store --gc
+nix-collect-garbage --delete-older-than 30d
 
 # Docker
 open -a Docker
